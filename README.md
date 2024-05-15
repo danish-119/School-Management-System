@@ -16,7 +16,7 @@ The primary objective of this project is to design and implement a user-friendly
 
 3. **Faculty Management**: Tools for managing faculty information, such as hiring details, course assignments, and salary tracking.
 
-4. **Labor Management**: Features for managing non-teaching staff, including recruitment, payroll management, and task assignments.
+4. **Staff Management**: Features for managing non-teaching staff, including recruitment, payroll management, and task assignments.
 
 5. **Financial Analysis**: Modules to calculate and analyze financial aspects, such as total salary expenses for faculty and staff, and revenue generated from student fees.
 
