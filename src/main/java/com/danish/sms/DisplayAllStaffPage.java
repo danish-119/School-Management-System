@@ -80,10 +80,8 @@ public class DisplayAllStaffPage {
         // Add columns to the table
         staffTable.getColumns().addAll(employerIdColumn, fullNameColumn, genderColumn, cnicColumn, contactColumn, qualificationColumn, jobTitleColumn, jobTypeColumn, workScheduleColumn,salaryColumn);
 
-        // Populate the table with data
         staffTable.setItems(staffList);
 
-        // Add table to the layout
         rightPane.getChildren().add(staffTable);
 
         // Adjust layout structure
