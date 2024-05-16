@@ -12,8 +12,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 public class Utility {
     // Method to create the left pane
@@ -136,6 +138,20 @@ public class Utility {
         return selectField;
     }
 
+    // Method to generate a random password
+    public static String generateRandomPassword() {
+        final String DIGITS = "0123456789";
+
+        Random random = new Random();
+        StringBuilder password = new StringBuilder();
+
+        for (int i = 0; i < 4; i++) {
+            int randomIndex = random.nextInt(DIGITS.length());
+            password.append(DIGITS.charAt(randomIndex));
+        }
+
+        return password.toString();
+    }
 
     //  Method to create the user image
     public static ImageView createImage(String imgPath) throws FileNotFoundException {

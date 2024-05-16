@@ -32,19 +32,13 @@ public class AddStaffPage {
         HBox qualificationField = Utility.createSelect(qualificationOptions, 230, 50, 430, 240);
 
         Label heading2 = Utility.createTextLabel("Employment Information:", 30, 100, 310);
-        TextField employerIdField = Utility.createTextField("Employee ID", 100, 380);
-        HBox joiningDateField = Utility.createDateField("Date of Joining", 430, 380);
         List<String> jobTitleOptions = List.of("Job Title", "Custodian", "Secretary", "Librarian", "Cafeteria Worker", "Security Officer", "Maintenance Worker", "IT Support Specialist", "Accountant");
-        HBox jobTitleField = Utility.createSelect(jobTitleOptions, 300, 50, 100, 450);
+        HBox jobTitleField = Utility.createSelect(jobTitleOptions, 300, 50, 100, 380);
         List<String> jobTypeOptions = List.of("Job Type", "Full-Time", "Part-Time", "Contract");
-        HBox jobTypeField = Utility.createSelect(jobTypeOptions, 230, 50, 430, 450);
-        TextField monthlySalaryField = Utility.createTextField("Monthly Salary", 100, 520);
+        HBox jobTypeField = Utility.createSelect(jobTypeOptions, 230, 50, 430, 380);
+        TextField monthlySalaryField = Utility.createTextField("Monthly Salary", 100, 450);
         List<String> workScheduleOptions = List.of("Work Schedule", "Monday-Friday", "Weekends Only", "Rotating Shifts", "Flexible Hours");
-        HBox workScheduleField = Utility.createSelect(workScheduleOptions, 230, 50, 430, 520);
-
-
-
-
+        HBox workScheduleField = Utility.createSelect(workScheduleOptions, 230, 50, 430, 450);
 
         Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
         backBtn.setOnAction(event -> {
@@ -63,25 +57,18 @@ public class AddStaffPage {
             String gender = UIControlUtils.extractValueFromComboBox(genderField);
             String contact = gContactField.getText();
             String qualification = UIControlUtils.extractValueFromComboBox(qualificationField);
-            String employerId = employerIdField.getText();
-            String monthlySalary = monthlySalaryField.getText();
-            String joiningDate = UIControlUtils.extractValueFromDatePicker(joiningDateField);
+            double monthlySalary = Double.parseDouble(monthlySalaryField.getText());
             String jobTitle = UIControlUtils.extractValueFromComboBox(jobTitleField);
             String jobType = UIControlUtils.extractValueFromComboBox(jobTypeField);
             String workSchedule = UIControlUtils.extractValueFromComboBox(workScheduleField);
 
-            Staff staff = new Staff();
-            staff.setStaffDetails(fullName, dateOfBirth, cnicNumber, gender, contact, qualification, employerId,  monthlySalary, joiningDate, jobTitle,  jobType, workSchedule);
-
-            StaffFileHandler.writeStaffToFile(staff);
-            StaffFileHandler.readStaffFromFile();
-
+            saveDataToMySQL.saveStaffInfo(fullName, dateOfBirth, gender, cnicNumber, contact, qualification, jobTitle, jobType, monthlySalary, workSchedule);
             staffManagementMenu.show();
             addStaffStage.close();
         });
 
 
-        rightPane.getChildren().addAll(heading1, sNameField, dobField, cnicField, genderField, gContactField, qualificationField, heading2,employerIdField, monthlySalaryField, joiningDateField, jobTitleField, jobTypeField, workScheduleField);
+        rightPane.getChildren().addAll(heading1, sNameField, dobField, cnicField, genderField, gContactField, qualificationField, heading2, monthlySalaryField, jobTitleField, jobTypeField, workScheduleField);
         leftPane.getChildren().addAll(Utility.createTextLabel("Add New Staff", 30, 140, 530), backBtn, nextBtn);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
