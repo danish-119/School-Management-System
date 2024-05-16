@@ -69,7 +69,7 @@ public class AddTeacherPage2 {
 
             teacher.setTeacherDetails2(jobTitle, jobType, department, password, monthlySalary, bank, documentStatus, documents);
 
-            saveDataToMySQL.saveTeacherInfo(teacher);
+            SaveDataToMySQL.saveTeacherInfo(teacher);
 
             addTeacherStage2.close();
         });

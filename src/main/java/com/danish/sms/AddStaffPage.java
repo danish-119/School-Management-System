@@ -62,7 +62,10 @@ public class AddStaffPage {
             String jobType = UIControlUtils.extractValueFromComboBox(jobTypeField);
             String workSchedule = UIControlUtils.extractValueFromComboBox(workScheduleField);
 
-            saveDataToMySQL.saveStaffInfo(fullName, dateOfBirth, gender, cnicNumber, contact, qualification, jobTitle, jobType, monthlySalary, workSchedule);
+            Staff staff = new Staff();
+            staff.setStaffDetails(fullName,dateOfBirth,cnicNumber,gender,contact,qualification,monthlySalary,jobTitle,jobType,workSchedule);
+
+            SaveDataToMySQL.saveStaffInfo(staff);
             staffManagementMenu.show();
             addStaffStage.close();
         });

@@ -4,10 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.math.BigDecimal;
 
 
-public class saveDataToMySQL {
+public class SaveDataToMySQL {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/academicDBHandler";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
@@ -85,31 +84,21 @@ public class saveDataToMySQL {
         }
     }
 
-    public  static void saveStaffInfo(String fullName, String dateOfBirth, String gender, String cnicNumber, String contact, String qualification, String jobTitle, String jobType, double monthlySalary, String workSchedule) {
-        if (!Validator.isValidGender(gender)) {
-            System.out.println("Invalid gender value: " + gender);
-            return; // Don't proceed with insertion
-        }
-
-        // Validate jobType
-        if (!Validator.isValidJobType(jobType)) {
-            System.out.println("Invalid job type value: " + jobType);
-            return; // Don't proceed with insertion
-        }
+    public  static void saveStaffInfo(Staff staff) {
 
         try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD)) {
             String sql = "INSERT INTO Staff (fullName, dateOfBirth, gender, cnicNumber, contact, qualification, jobTitle, jobType, monthlySalary, workSchedule) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = conn.prepareStatement(sql)) {
-                statement.setString(1, fullName);
-                statement.setString(2, dateOfBirth);
-                statement.setString(3, gender);
-                statement.setString(4, cnicNumber);
-                statement.setString(5, contact);
-                statement.setString(6, qualification);
-                statement.setString(7, jobTitle);
-                statement.setString(8, jobType);
-                statement.setDouble(9, monthlySalary);
-                statement.setString(10, workSchedule);
+                statement.setString(1, staff.getFullName());
+                statement.setString(2, staff.getDateOfBirth());
+                statement.setString(3, staff.getGender());
+                statement.setString(4, staff.getCnicNumber());
+                statement.setString(5, staff.getContact());
+                statement.setString(6, staff.getQualification());
+                statement.setString(7, staff.getJobTitle());
+                statement.setString(8, staff.getJobType());
+                statement.setDouble(9, staff.getMonthlySalary());
+                statement.setString(10, staff.getWorkSchedule());
 
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
