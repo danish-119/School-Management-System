@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class saveDataToMySQL {
-    private static final String JDBC_URL = "";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/academicDBHandler";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
 
