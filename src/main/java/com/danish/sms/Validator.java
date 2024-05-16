@@ -6,6 +6,6 @@ public class Validator {
     }
 
     public static boolean isValidJobType(String jobType) {
-        return jobType.equals("Full-time") || jobType.equals("Part-time") || jobType.equals("Contract");
+        return jobType.equals("Full-Time") || jobType.equals("Part-Time") || jobType.equals("Contract");
     }
 }
