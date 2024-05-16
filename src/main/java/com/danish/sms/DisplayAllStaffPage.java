@@ -1,7 +1,6 @@
 package com.danish.sms;
 
 
-import com.mysql.cj.xdevapi.JsonArray;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
@@ -13,9 +12,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.security.Timestamp;
-import java.util.Date;
 
 public class DisplayAllStaffPage {
 
@@ -53,6 +49,9 @@ public class DisplayAllStaffPage {
         TableColumn<Staff, String> fullNameColumn = new TableColumn<>("Full Name");
         fullNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFullName()));
 
+        TableColumn<Staff, String> dateOfBirthColumn = new TableColumn<>("Date of Birth");
+        dateOfBirthColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDateOfBirth()));
+
         TableColumn<Staff, String> genderColumn = new TableColumn<>("Gender");
         genderColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGender()));
 
@@ -64,6 +63,9 @@ public class DisplayAllStaffPage {
 
         TableColumn<Staff, String> qualificationColumn = new TableColumn<>("Qualification");
         qualificationColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getQualification()));
+
+        TableColumn<Staff, String> joiningDateColumn = new TableColumn<>("Joining Date");
+        joiningDateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJoiningDate()));
 
         TableColumn<Staff, String> jobTitleColumn = new TableColumn<>("Job Title");
         jobTitleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJobTitle()));
@@ -78,7 +80,14 @@ public class DisplayAllStaffPage {
         salaryColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getMonthlySalary()));
 
         // Add columns to the table
-        staffTable.getColumns().addAll(employerIdColumn, fullNameColumn, genderColumn, cnicColumn, contactColumn, qualificationColumn, jobTitleColumn, jobTypeColumn, workScheduleColumn,salaryColumn);
+        TableColumn<Staff, String> personalInfoColumn = new TableColumn<>("Personal Information");
+        personalInfoColumn.getColumns().addAll(fullNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, contactColumn,qualificationColumn);
+
+        TableColumn<Staff, String> professionalInfoColumn = new TableColumn<>("Professional Information");
+        professionalInfoColumn.getColumns().addAll( joiningDateColumn, jobTitleColumn, jobTypeColumn, workScheduleColumn, salaryColumn);
+
+// Add columns to the table
+        staffTable.getColumns().addAll(employerIdColumn, personalInfoColumn, professionalInfoColumn);
 
         staffTable.setItems(staffList);
 

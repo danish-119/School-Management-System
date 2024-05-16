@@ -27,7 +27,7 @@ public class SaveDataToMySQL {
                 statement.setString(10, student.getGuardianCnic());
                 statement.setString(11, student.getGuardianOccupation());
                 statement.setString(12, student.getGuardianContact());
-                statement.setString(13, student.getJobTypeSelected());
+                statement.setString(13, student.getJobType());
                 statement.setString(14, student.getAdmissionNumber());
                 statement.setString(15, student.getClassGrade());
                 statement.setString(16, student.getSection());
@@ -36,7 +36,7 @@ public class SaveDataToMySQL {
                 statement.setString(19, student.getAdmissionDate());
                 statement.setDouble(20,student.getMonthlyFee());
                 statement.setString(21, student.getScholarshipStatus());
-                statement.setString(22, student.getDocuments());
+                statement.setString(22, student.getDocumentRequired());
                 statement.setString(23, student.getDocumentStatus());
 
                 int rowsInserted = statement.executeUpdate();
