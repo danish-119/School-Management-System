@@ -13,20 +13,22 @@ public class Teacher implements Serializable {
     private String email;
     private String experience;
     private String experienceYears;
-    private String university;
+    private String universityGraduatedFrom;
     private String qualification;
-    private String subject;
+    private String majorSubject;
     // Page 2
     private String jobTitle;
     private String jobType;
     private String department;
     private String joiningDate;
-    private String monthlySalary;
-    private String bank;
+    private String username;
+    private String password;
+    private double monthlySalary;
+    private String bankForDirectDeposit;
     private String documentStatus;
-    private String documents;
+    private String documentRequired;
 
-    public void setTeacherDetails1(String teacherName, String dob, String fatherName, String gender, String cnic, String bloodGroup, String email, String experience, String experienceYears, String university, String qualification, String subject) {
+    public void setTeacherDetails1(String teacherName, String dob, String fatherName, String gender, String cnic, String bloodGroup, String email, String experience, String experienceYears, String universityGraduatedFrom, String qualification, String majorSubject) {
         this.teacherName = teacherName;
         this.dob = dob;
         this.fatherName = fatherName;
@@ -36,47 +38,107 @@ public class Teacher implements Serializable {
         this.email = email;
         this.experience = experience;
         this.experienceYears = experienceYears;
-        this.university = university;
+        this.universityGraduatedFrom = universityGraduatedFrom;
         this.qualification = qualification;
-        this.subject = subject;
+        this.majorSubject = majorSubject;
     }
 
-    public void setTeacherDetails2(String jobTitle, String jobType, String department, String joiningDate, String monthlySalary, String bank, String documentStatus, String documents) {
+    public void setTeacherDetails2(String jobTitle, String jobType, String department,String password, double monthlySalary, String bankForDirectDeposit, String documentStatus, String documentRequired) {
         this.jobTitle = jobTitle;
         this.jobType = jobType;
         this.department = department;
-        this.joiningDate = joiningDate;
+        this.password = password;
         this.monthlySalary = monthlySalary;
-        this.bank = bank;
+        this.bankForDirectDeposit = bankForDirectDeposit;
         this.documentStatus = documentStatus;
-        this.documents = documents;
+        this.documentRequired = documentRequired;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Teacher Information:\n")
-                .append("Name: ").append(teacherName).append("\n")
-                .append("Date of Birth: ").append(dob).append("\n")
-                .append("Father's Name: ").append(fatherName).append("\n")
-                .append("Gender: ").append(gender).append("\n")
-                .append("CNIC: ").append(cnic).append("\n")
-                .append("Blood Group: ").append(bloodGroup).append("\n")
-                .append("Email: ").append(email).append("\n")
-                .append("Experience: ").append(experience).append(" (").append(experienceYears).append(" years)\n")
-                .append("University: ").append(university).append("\n")
-                .append("Qualification: ").append(qualification).append("\n")
-                .append("Subject: ").append(subject).append("\n\n")
-                .append("Job Information:\n")
-                .append("Job Title: ").append(jobTitle).append("\n")
-                .append("Job Type: ").append(jobType).append("\n")
-                .append("Department: ").append(department).append("\n")
-                .append("Joining Date: ").append(joiningDate).append("\n")
-                .append("Monthly Salary: ").append(monthlySalary).append("\n")
-                .append("Bank: ").append(bank).append("\n")
-                .append("Document Status: ").append(documentStatus).append("\n")
-                .append("Documents: ").append(documents);
-        return sb.toString();
+    public String getTeacherName() {
+        return teacherName;
     }
 
+    public String getDob() {
+        return dob;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getCnic() {
+        return cnic;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public String getExperienceYears() {
+        return experienceYears;
+    }
+
+    public String getUniversityGraduatedFrom() {
+        return universityGraduatedFrom;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public String getMajorSubject() {
+        return majorSubject;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public String getJobType() {
+        return jobType;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getJoiningDate() {
+        return joiningDate;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public double getMonthlySalary() {
+        return monthlySalary;
+    }
+
+    public String getBankForDirectDeposit() {
+        return bankForDirectDeposit;
+    }
+
+    public String getDocumentStatus() {
+        return documentStatus;
+    }
+
+    public String getDocumentRequired() {
+        return documentRequired;
+    }
 }

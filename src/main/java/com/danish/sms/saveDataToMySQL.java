@@ -50,6 +50,41 @@ public class saveDataToMySQL {
         }
     }
 
+    public static void saveTeacherInfo(Teacher teacher) {
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD)) {
+            String sql = "INSERT INTO Teacher (teacherName, dateOfBirth, gender, cnicNumber, bloodGroup, email, experience, experienceYears, universityGraduatedFrom, qualification, majorSubject, jobTitle, jobType, department, monthlySalary, bankForDirectDeposit, documentRequired, documentStatus, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                statement.setString(1, teacher.getTeacherName());
+                statement.setString(2, teacher.getDob());
+                statement.setString(3, teacher.getGender());
+                statement.setString(4, teacher.getCnic());
+                statement.setString(5, teacher.getBloodGroup());
+                statement.setString(6, teacher.getEmail());
+                statement.setString(7, teacher.getExperience());
+                statement.setString(8, teacher.getExperienceYears());
+                statement.setString(9, teacher.getUniversityGraduatedFrom());
+                statement.setString(10, teacher.getQualification());
+                statement.setString(11, teacher.getMajorSubject());
+                statement.setString(12, teacher.getJobTitle());
+                statement.setString(13, teacher.getJobType());
+                statement.setString(14, teacher.getDepartment());
+                statement.setDouble(15, teacher.getMonthlySalary());
+                statement.setString(16, teacher.getBankForDirectDeposit());
+                statement.setString(17, teacher.getDocumentRequired());
+                statement.setString(18, teacher.getDocumentStatus());
+                statement.setString(19, teacher.getUsername());
+                statement.setString(20, teacher.getPassword());
+
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                    System.out.println("A new teacher was inserted successfully!");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error inserting data into database: " + e.getMessage());
+        }
+    }
+
     public  static void saveStaffInfo(String fullName, String dateOfBirth, String gender, String cnicNumber, String contact, String qualification, String jobTitle, String jobType, double monthlySalary, String workSchedule) {
         if (!Validator.isValidGender(gender)) {
             System.out.println("Invalid gender value: " + gender);
