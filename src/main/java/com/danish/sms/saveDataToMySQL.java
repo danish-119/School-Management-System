@@ -4,11 +4,51 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.math.BigDecimal;
+
 
 public class saveDataToMySQL {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/academicDBHandler";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
+
+    public static void saveStudentInfo(Student student) {
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD)) {
+            String sql = "INSERT INTO Student (studentName, dateOfBirth, gender, cnicOrBForm, bloodGroup, email, extracurricularInterest, guardianName, guardianRelation, guardianCnic, guardianOccupation, guardianContact, jobType, admissionNumber, classGrade, section, username, password, admissionDate, monthlyFee, scholarshipStatus, documentRequired, documentStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                statement.setString(1, student.getStudentName());
+                statement.setString(2, student.getDob());
+                statement.setString(3, student.getGender());
+                statement.setString(4, student.getCnicOrBForm());
+                statement.setString(5, student.getBloodGroup());
+                statement.setString(6, student.getEmail());
+                statement.setString(7, student.getExtracurricularInterest());
+                statement.setString(8, student.getGuardianName());
+                statement.setString(9, student.getGuardianRelation());
+                statement.setString(10, student.getGuardianCnic());
+                statement.setString(11, student.getGuardianOccupation());
+                statement.setString(12, student.getGuardianContact());
+                statement.setString(13, student.getJobTypeSelected());
+                statement.setString(14, student.getAdmissionNumber());
+                statement.setString(15, student.getClassGrade());
+                statement.setString(16, student.getSection());
+                statement.setString(17, student.getUsername());
+                statement.setString(18, student.getPassword());
+                statement.setString(19, student.getAdmissionDate());
+                statement.setDouble(20,student.getMonthlyFee());
+                statement.setString(21, student.getScholarshipStatus());
+                statement.setString(22, student.getDocuments());
+                statement.setString(23, student.getDocumentStatus());
+
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                    System.out.println("A new student was inserted successfully!");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error inserting data into database: " + e.getMessage());
+        }
+    }
 
     public  static void saveStaffInfo(String fullName, String dateOfBirth, String gender, String cnicNumber, String contact, String qualification, String jobTitle, String jobType, double monthlySalary, String workSchedule) {
         if (!Validator.isValidGender(gender)) {
@@ -45,5 +85,4 @@ public class saveDataToMySQL {
             System.out.println("Error inserting data into database: " + e.getMessage());
         }
     }
-
 }

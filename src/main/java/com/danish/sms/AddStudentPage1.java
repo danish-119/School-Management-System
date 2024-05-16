@@ -59,20 +59,20 @@ public class AddStudentPage1 {
             System.out.println("Next Button Clicked!");
 
             // Collect data entered by the user
-            String studentName = sNameField.getText();
+            String studentName = sNameField.getText().toUpperCase();
             String dob = UIControlUtils.extractValueFromDatePicker(dobField);
-            String fatherName = fNameField.getText();
-            String gender = UIControlUtils.extractValueFromComboBox(genderField);
+            String fatherName = fNameField.getText().toUpperCase();
+            String gender = UIControlUtils.extractValueFromComboBox(genderField).toUpperCase();
             String cnic = sCnicField.getText();
             String bloodGroup = UIControlUtils.extractValueFromComboBox(bloodGroupField);
-            String email = emailField.getText();
-            String extracurricular = UIControlUtils.extractValueFromComboBox(extracurricularField);
-            String guardianName = gNameField.getText();
-            String relation = UIControlUtils.extractValueFromComboBox(relationField);
+            String email = emailField.getText().toLowerCase();
+            String extracurricular = UIControlUtils.extractValueFromComboBox(extracurricularField).toLowerCase();
+            String guardianName = gNameField.getText().toUpperCase();
+            String relation = UIControlUtils.extractValueFromComboBox(relationField).toUpperCase();
             String guardianCnic = gCnicField.getText();
-            String occupation = UIControlUtils.extractValueFromComboBox(occupationField);
+            String occupation = UIControlUtils.extractValueFromComboBox(occupationField).toUpperCase();
             String contact = gContactField.getText();
-            String jobTypeSelected = UIControlUtils.extractSelectedRadioButtonText(jobTypeField);
+            String jobTypeSelected = UIControlUtils.extractSelectedRadioButtonText(jobTypeField).toLowerCase();
 
             // Create a Student object and passing its method collected data
             Student student = new Student();
