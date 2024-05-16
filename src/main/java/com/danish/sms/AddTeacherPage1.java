@@ -57,13 +57,13 @@ public class AddTeacherPage1 {
             System.out.println("Next Button Clicked!");
 
             // Collect data entered by the user
-            String teacherName = sNameField.getText();
+            String teacherName = sNameField.getText().toUpperCase();
             String dob = UIControlUtils.extractValueFromDatePicker(dobField);
-            String fatherName = fNameField.getText();
+            String fatherName = fNameField.getText().toUpperCase();
             String gender = UIControlUtils.extractValueFromComboBox(genderField);
             String cnic = sCnicField.getText();
             String bloodGroup = UIControlUtils.extractValueFromComboBox(bloodGroupField);
-            String email = emailField.getText();
+            String email = emailField.getText().toLowerCase();
             String experience = experienceField.getText();
             String experienceYears = experienceYearField.getText();
             String university = UIControlUtils.extractValueFromComboBox(graduatedFromField);
