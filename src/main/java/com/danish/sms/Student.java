@@ -21,7 +21,7 @@ public class Student implements Serializable {
     // Page 2
     private String admissionNumber;
     private String classGrade;
-    private String rollNumber;
+    private String studentId;
     private String section;
     private String username;
     private String password;
@@ -50,14 +50,12 @@ public class Student implements Serializable {
     }
 
     // Method to set values for all attributes
-    public void setStudentDetails2(String admissionNumber, String classGrade, String rollNumber, String section, String username, String password, String admissionDate, String monthlyFee, String scholarshipStatus, String documentStatus, String documents) {
+    public void setStudentDetails2(String admissionNumber, String classGrade, String section, String username, String password, String monthlyFee, String scholarshipStatus, String documentStatus, String documents) {
         this.admissionNumber = admissionNumber;
         this.classGrade = classGrade;
-        this.rollNumber = rollNumber;
         this.section = section;
         this.username = username;
         this.password = password;
-        this.admissionDate = admissionDate;
         this.monthlyFee = monthlyFee;
         this.scholarshipStatus = scholarshipStatus;
         this.documentStatus = documentStatus;
@@ -87,7 +85,7 @@ public class Student implements Serializable {
         sb.append("\nAdmission Details:\n");
         sb.append("Admission Number: ").append(admissionNumber).append("\n");
         sb.append("Class/Grade: ").append(classGrade).append("\n");
-        sb.append("Roll Number: ").append(rollNumber).append("\n");
+        sb.append("Roll Number: ").append(studentId).append("\n");
         sb.append("Section: ").append(section).append("\n");
         sb.append("Username: ").append(username).append("\n");
         sb.append("Password: ").append(password).append("\n");
