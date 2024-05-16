@@ -1,7 +1,13 @@
 package com.danish.sms;
 
+
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -26,15 +32,75 @@ public class DisplayAllStaffPage {
             displayAllStaffStage.close();
         });
 
+        // Load data from the database
+        ObservableList<Staff> staffList = LoadDataFromMySQL.loadStaffData();
 
-        rightPane.getChildren().addAll();
+        // Create a TableView and define columns
+        TableView<Staff> staffTable = new TableView<>();
+        staffTable.setPrefHeight(800);
+        staffTable.setPrefWidth(800);
+//        staffTable.setStyle("-fx-control-inner-background: #e6e6f9;");
+
+
+        TableColumn<Staff, String> employerIdColumn = new TableColumn<>("Employer ID");
+        employerIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmployerId()));
+
+
+        TableColumn<Staff, String> fullNameColumn = new TableColumn<>("Full Name");
+        fullNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFullName()));
+
+        TableColumn<Staff, String> dateOfBirthColumn = new TableColumn<>("Date of Birth");
+        dateOfBirthColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDateOfBirth()));
+
+        TableColumn<Staff, String> genderColumn = new TableColumn<>("Gender");
+        genderColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGender()));
+
+        TableColumn<Staff, String> cnicColumn = new TableColumn<>("CNIC");
+        cnicColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCnicNumber()));
+
+        TableColumn<Staff, String> contactColumn = new TableColumn<>("Contact");
+        contactColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getContact()));
+
+        TableColumn<Staff, String> qualificationColumn = new TableColumn<>("Qualification");
+        qualificationColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getQualification()));
+
+        TableColumn<Staff, String> joiningDateColumn = new TableColumn<>("Joining Date");
+        joiningDateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJoiningDate()));
+
+        TableColumn<Staff, String> jobTitleColumn = new TableColumn<>("Job Title");
+        jobTitleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJobTitle()));
+
+        TableColumn<Staff, String> jobTypeColumn = new TableColumn<>("Job Type");
+        jobTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJobType()));
+
+        TableColumn<Staff, String> workScheduleColumn = new TableColumn<>("Work Schedule");
+        workScheduleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getWorkSchedule()));
+
+        TableColumn<Staff, Double> salaryColumn = new TableColumn<>("Monthly Salary");
+        salaryColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getMonthlySalary()));
+
+        // Add columns to the table
+        TableColumn<Staff, String> personalInfoColumn = new TableColumn<>("Personal Information");
+        personalInfoColumn.getColumns().addAll(fullNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, contactColumn,qualificationColumn);
+
+        TableColumn<Staff, String> professionalInfoColumn = new TableColumn<>("Professional Information");
+        professionalInfoColumn.getColumns().addAll( joiningDateColumn, jobTitleColumn, jobTypeColumn, workScheduleColumn, salaryColumn);
+
+// Add columns to the table
+        staffTable.getColumns().addAll(employerIdColumn, personalInfoColumn, professionalInfoColumn);
+
+        staffTable.setItems(staffList);
+
+        rightPane.getChildren().add(staffTable);
+
+        // Adjust layout structure
         leftPane.getChildren().addAll(Utility.createTextLabel("All Staff Info", 30, 140, 530), backBtn);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
+        // Set up the scene and display the stage
         Scene scene = new Scene(mainLayout, 1200, 800);
         displayAllStaffStage.setScene(scene);
         displayAllStaffStage.show();
     }
 }
-

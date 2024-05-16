@@ -71,7 +71,7 @@ public class AddStudentPage2 {
             String documents = documentField.getText();
 
             student.setStudentDetails2(admissionNumber, classGrade, section, password, monthlyFee, scholarshipStatus, documentStatus, documents);
-            saveDataToMySQL.saveStudentInfo(student);
+            SaveDataToMySQL.saveStudentInfo(student);
 
             addStudentStage2.close();
         });

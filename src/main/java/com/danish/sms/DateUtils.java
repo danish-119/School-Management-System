@@ -9,7 +9,7 @@ public class DateUtils {
     // Method to convert a String to a Date object
     public static Date convertStringToDate(String dateString) {
         try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // Adjust the date format as per your requirements
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             return dateFormat.parse(dateString);
         } catch (ParseException e) {
             e.printStackTrace();
