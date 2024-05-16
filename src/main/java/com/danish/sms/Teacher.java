@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Teacher implements Serializable {
     // Page 1
+    private  int teacherId;
     private String teacherName;
     private String dob;
     private String fatherName;
@@ -52,6 +53,10 @@ public class Teacher implements Serializable {
         this.bankForDirectDeposit = bankForDirectDeposit;
         this.documentStatus = documentStatus;
         this.documentRequired = documentRequired;
+    }
+
+    public int getTeacherId() {
+        return teacherId;
     }
 
     public String getTeacherName() {
@@ -140,5 +145,97 @@ public class Teacher implements Serializable {
 
     public String getDocumentRequired() {
         return documentRequired;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setCnic(String cnic) {
+        this.cnic = cnic;
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public void setExperienceYears(String experienceYears) {
+        this.experienceYears = experienceYears;
+    }
+
+    public void setUniversityGraduatedFrom(String universityGraduatedFrom) {
+        this.universityGraduatedFrom = universityGraduatedFrom;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    public void setMajorSubject(String majorSubject) {
+        this.majorSubject = majorSubject;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setJoiningDate(String joiningDate) {
+        this.joiningDate = joiningDate;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setMonthlySalary(double monthlySalary) {
+        this.monthlySalary = monthlySalary;
+    }
+
+    public void setBankForDirectDeposit(String bankForDirectDeposit) {
+        this.bankForDirectDeposit = bankForDirectDeposit;
+    }
+
+    public void setDocumentStatus(String documentStatus) {
+        this.documentStatus = documentStatus;
+    }
+
+    public void setDocumentRequired(String documentRequired) {
+        this.documentRequired = documentRequired;
+    }
+
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
     }
 }

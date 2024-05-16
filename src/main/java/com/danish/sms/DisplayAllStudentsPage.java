@@ -12,8 +12,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.Date;
-
 public class DisplayAllStudentsPage {
 
     public void showDisplayAllStudentsPage(Stage studentManagementStage) {
@@ -39,7 +37,7 @@ public class DisplayAllStudentsPage {
         // Create a TableView and define columns
         TableView<Student> studentTable = new TableView<>();
         studentTable.setPrefHeight(800);
-        studentTable.setPrefWidth(1200);
+        studentTable.setPrefWidth(800);
 
         TableColumn<Student, String> studentIdColumn = new TableColumn<>("Student ID");
         studentIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(Integer.toString(cellData.getValue().getStudentId())));
@@ -115,7 +113,17 @@ public class DisplayAllStudentsPage {
 
 
         // Add columns to the table
-        studentTable.getColumns().addAll(studentIdColumn, studentNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, bloodGroupColumn, emailColumn, extracurricularColumn, guardianNameColumn, guardianRelationColumn, guardianCnicColumn, guardianOccupationColumn, guardianContactColumn, jobTypeColumn, admissionNumberColumn, classGradeColumn, sectionColumn, usernameColumn, passwordColumn, admissionDateColumn, monthlyFeeColumn, scholarshipStatusColumn, documentRequiredColumn, documentStatusColumn);
+        TableColumn<Student, String> personalInfoColumn = new TableColumn<>("Personal Information");
+        personalInfoColumn.getColumns().addAll(studentNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, bloodGroupColumn, emailColumn, extracurricularColumn);
+
+        TableColumn<Student, String> gardianInfoColumn = new TableColumn<>("Gardian's Information");
+        gardianInfoColumn.getColumns().addAll(guardianNameColumn, guardianRelationColumn, guardianCnicColumn, guardianOccupationColumn, guardianContactColumn, jobTypeColumn);
+
+        TableColumn<Student, String> academicInfoColumn = new TableColumn<>("Academic Information");
+        academicInfoColumn.getColumns().addAll(admissionNumberColumn, classGradeColumn, sectionColumn, usernameColumn, passwordColumn, admissionDateColumn, monthlyFeeColumn, scholarshipStatusColumn, documentRequiredColumn, documentStatusColumn);
+
+
+        studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn, gardianInfoColumn, academicInfoColumn);
 
         // Populate the table with data
         studentTable.setItems(studentList);
