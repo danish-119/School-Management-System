@@ -43,6 +43,7 @@ public class LandingPage extends Application {
         // Add buttons
         Button manageStudentsBtn = Utility.createButton("", 300, 50, 220, 680);
         Text buttonText = new Text("Tap to Continue!");
+        buttonText.setStyle("fx-text-fill: white;");
         manageStudentsBtn.setGraphic(buttonText);
         manageStudentsBtn.setOnAction(event -> {
             System.out.println("Manage Students Button Clicked...");
