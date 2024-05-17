@@ -36,6 +36,7 @@ public class DisplayAllStudentsPage {
 
         // Create a TableView and define columns
         TableView<Student> studentTable = new TableView<>();
+        studentTable.setStyle("-fx-background-color: #f0f0f0; -fx-font-size: 14px; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 5px;");
         studentTable.setPrefHeight(800);
         studentTable.setPrefWidth(800);
 

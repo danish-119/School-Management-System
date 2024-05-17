@@ -18,10 +18,10 @@ import java.io.FileNotFoundException;
 public class LandingPage extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws FileNotFoundException {
         Scene scene = createLandingPageScene(stage);
         stage.setScene(scene);
-        stage.setTitle("Attendance Tracker");
+        stage.setTitle("School Management System");
         stage.show();
     }
 
@@ -35,7 +35,7 @@ public class LandingPage extends Application {
 
         // Create left pane
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome User!", 30, 140, 530));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome User!", 30, 140, 530), Utility.createImage("smsIcon.png"));
 
         // Create right pane
         Pane rightPane = Utility.createRightPane();
