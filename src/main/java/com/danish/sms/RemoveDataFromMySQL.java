@@ -14,7 +14,6 @@ public class RemoveDataFromMySQL {
     // Method to remove staff from the database
     public static boolean removeStaffFromDatabase(String employerId) {
 
-        // SQL query to remove staff by ID
         String sql = "DELETE FROM Staff WHERE employerId = ?";
 
         try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
@@ -24,7 +23,6 @@ public class RemoveDataFromMySQL {
 
             // Execute the delete operation
            statement.executeUpdate();
-            // Check if the deletion was successful
             return true;
         } catch (SQLException e) {
             System.out.println("Error removing staff from database: " + e.getMessage());
