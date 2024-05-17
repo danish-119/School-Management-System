@@ -3,15 +3,17 @@ package com.danish.sms;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DisplayAllStaffPage {
 
@@ -25,6 +27,16 @@ public class DisplayAllStaffPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
+
+        ObservableList<Staff> filteredList = FXCollections.observableArrayList();
+        // Create a TableView and define columns
+        TableView<Staff> staffTable = new TableView<>();
+        staffTable.setPrefHeight(800);
+        staffTable.setPrefWidth(800);
+//        staffTable.setStyle("-fx-control-inner-background: #e6e6f9;");
+        // Load data from the database
+        ObservableList<Staff> staffList = LoadDataFromMySQL.loadStaffData();
+
         Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
@@ -32,18 +44,29 @@ public class DisplayAllStaffPage {
             displayAllStaffStage.close();
         });
 
-        // Load data from the database
-        ObservableList<Staff> staffList = LoadDataFromMySQL.loadStaffData();
+        TextField employerIdField = Utility.createTextField("Enter Employer ID", 210, 730);
+        employerIdField.setPrefWidth(155);
+        employerIdField.setStyle("-fx-font-size: 14px;");
 
-        // Create a TableView and define columns
-        TableView<Staff> staffTable = new TableView<>();
-        staffTable.setPrefHeight(800);
-        staffTable.setPrefWidth(800);
-//        staffTable.setStyle("-fx-control-inner-background: #e6e6f9;");
+        Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
+        searchBtn.setOnAction(event -> {
+            System.out.println("Search Button Clicked!");
+            String studentId = employerIdField.getText();
+            if (studentId.isEmpty()) {
+                staffTable.setItems(staffList);
+            } else {
+                filteredList.clear();
+                List<Staff> filteredStaff = staffList.stream()
+                        .filter(student -> Integer.toString(student.getEmployerId()).equals(studentId))
+                        .collect(Collectors.toList());
+                filteredList.addAll(filteredStaff);
+                staffTable.setItems(filteredList);
+            }
+        });
 
 
         TableColumn<Staff, String> employerIdColumn = new TableColumn<>("Employer ID");
-        employerIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmployerId()));
+        employerIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(Integer.toString(cellData.getValue().getEmployerId())));
 
 
         TableColumn<Staff, String> fullNameColumn = new TableColumn<>("Full Name");
@@ -86,7 +109,7 @@ public class DisplayAllStaffPage {
         TableColumn<Staff, String> professionalInfoColumn = new TableColumn<>("Professional Information");
         professionalInfoColumn.getColumns().addAll( joiningDateColumn, jobTitleColumn, jobTypeColumn, workScheduleColumn, salaryColumn);
 
-// Add columns to the table
+        // Add columns to the table
         staffTable.getColumns().addAll(employerIdColumn, personalInfoColumn, professionalInfoColumn);
 
         staffTable.setItems(staffList);
@@ -94,7 +117,7 @@ public class DisplayAllStaffPage {
         rightPane.getChildren().add(staffTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Staff Info", 30, 140, 530), backBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Staff Info", 30, 140, 530), backBtn, employerIdField, searchBtn);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

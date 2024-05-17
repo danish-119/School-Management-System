@@ -4,11 +4,13 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -16,6 +18,8 @@ import javafx.stage.Stage;
 
 import java.security.Timestamp;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DisplayAllTeachersPage {
 
@@ -29,6 +33,16 @@ public class DisplayAllTeachersPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
+
+        ObservableList<Teacher> filteredList = FXCollections.observableArrayList();
+        // Load data from the database
+        ObservableList<Teacher> teacherList = LoadDataFromMySQL.loadTeacherData();
+        // Create a TableView and define columns
+        TableView<Teacher> teacherTable = new TableView<>();
+        teacherTable.setPrefHeight(800);
+        teacherTable.setPrefWidth(1200);
+
+
         Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
@@ -36,13 +50,25 @@ public class DisplayAllTeachersPage {
             displayAllTeachersStage.close();
         });
 
-        // Load data from the database
-        ObservableList<Teacher> teacherList = LoadDataFromMySQL.loadTeacherData();
+        TextField teacherIdField = Utility.createTextField("Enter Teacher ID", 210, 730);
+        teacherIdField.setPrefWidth(155);
+        teacherIdField.setStyle("-fx-font-size: 14px;");
 
-        // Create a TableView and define columns
-        TableView<Teacher> teacherTable = new TableView<>();
-        teacherTable.setPrefHeight(800);
-        teacherTable.setPrefWidth(1200);
+        Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
+        searchBtn.setOnAction(event -> {
+            System.out.println("Search Button Clicked!");
+            String teacherId = teacherIdField.getText();
+            if (teacherId.isEmpty()) {
+                teacherTable.setItems(teacherList);
+            } else {
+                filteredList.clear();
+                List<Teacher> filteredTeachers = teacherList.stream()
+                        .filter(teacher -> Integer.toString(teacher.getTeacherId()).equals(teacherId))
+                        .collect(Collectors.toList());
+                filteredList.addAll(filteredTeachers);
+                teacherTable.setItems(filteredList);
+            }
+        });
 
         TableColumn<Teacher, String> teacherIdColumn = new TableColumn<>("Teacher ID");
         teacherIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(Integer.toString(cellData.getValue().getTeacherId())));
@@ -121,7 +147,7 @@ public class DisplayAllTeachersPage {
         rightPane.getChildren().add(teacherTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, 140, 530), backBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, 140, 530), backBtn, teacherIdField,searchBtn);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
