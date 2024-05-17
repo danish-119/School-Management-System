@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -34,6 +35,16 @@ public class DisplayAllTeachersPage {
             System.out.println("Back Button Clicked!");
             teacherManagementStage.show();
             displayAllTeachersStage.close();
+        });
+
+        TextField teacherIdField = Utility.createTextField("Enter Teacher ID", 210, 730);
+        teacherIdField.setPrefWidth(155);
+        teacherIdField.setStyle("-fx-font-size: 14px;");
+
+        Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
+        searchBtn.setOnAction(event -> {
+            System.out.println("Search Button Clicked!");
+            String employerId = teacherIdField.getText();
         });
 
         // Load data from the database
@@ -121,7 +132,7 @@ public class DisplayAllTeachersPage {
         rightPane.getChildren().add(teacherTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, 140, 530), backBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, 140, 530), backBtn, teacherIdField,searchBtn);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
