@@ -108,7 +108,7 @@ public class LoadDataFromMySQL {
                 ResultSet resultSet = statement.executeQuery();
                 while (resultSet.next()) {
                     Staff staff = new Staff();
-                    staff.setEmployerId(String.valueOf(resultSet.getInt("employerId")));
+                    staff.setEmployerId(resultSet.getInt("employerId"));
                     staff.setFullName(resultSet.getString("fullName"));
                     staff.setDateOfBirth(String.valueOf(resultSet.getDate("dateOfBirth")));
                     staff.setGender(resultSet.getString("gender"));

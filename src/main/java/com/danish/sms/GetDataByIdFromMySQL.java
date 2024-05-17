@@ -31,7 +31,7 @@ public class GetDataByIdFromMySQL {
                 if (resultSet.next()) {
                     // Create a new Staff object and populate its fields from the result set
                     staff = new Staff();
-                    staff.setEmployerId(String.valueOf(resultSet.getInt("employerId")));
+                    staff.setEmployerId(resultSet.getInt("employerId"));
                     staff.setFullName(resultSet.getString("fullName"));
                     staff.setDateOfBirth(resultSet.getString("dateOfBirth"));
                     staff.setGender(resultSet.getString("gender"));

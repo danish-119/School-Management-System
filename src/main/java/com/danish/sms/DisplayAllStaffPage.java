@@ -3,6 +3,7 @@ package com.danish.sms;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -10,6 +11,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DisplayAllStaffPage {
 
@@ -23,6 +27,13 @@ public class DisplayAllStaffPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
+
+        ObservableList<Staff> filteredList = FXCollections.observableArrayList();
+        // Create a TableView and define columns
+        TableView<Staff> staffTable = new TableView<>();
+        staffTable.setPrefHeight(800);
+        staffTable.setPrefWidth(800);
+//        staffTable.setStyle("-fx-control-inner-background: #e6e6f9;");
         // Load data from the database
         ObservableList<Staff> staffList = LoadDataFromMySQL.loadStaffData();
 
@@ -40,18 +51,22 @@ public class DisplayAllStaffPage {
         Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
-            String employerId = employerIdField.getText();
+            String studentId = employerIdField.getText();
+            if (studentId.isEmpty()) {
+                staffTable.setItems(staffList);
+            } else {
+                filteredList.clear();
+                List<Staff> filteredStaff = staffList.stream()
+                        .filter(student -> Integer.toString(student.getEmployerId()).equals(studentId))
+                        .collect(Collectors.toList());
+                filteredList.addAll(filteredStaff);
+                staffTable.setItems(filteredList);
+            }
         });
-
-        // Create a TableView and define columns
-        TableView<Staff> staffTable = new TableView<>();
-        staffTable.setPrefHeight(800);
-        staffTable.setPrefWidth(800);
-//        staffTable.setStyle("-fx-control-inner-background: #e6e6f9;");
 
 
         TableColumn<Staff, String> employerIdColumn = new TableColumn<>("Employer ID");
-        employerIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmployerId()));
+        employerIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(Integer.toString(cellData.getValue().getEmployerId())));
 
 
         TableColumn<Staff, String> fullNameColumn = new TableColumn<>("Full Name");

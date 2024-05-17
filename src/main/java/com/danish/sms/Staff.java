@@ -9,7 +9,7 @@ public class Staff implements Serializable {
    private String gender;
     private String contact;
    private String qualification;
-    private String employerId;
+    private int employerId;
     double monthlySalary;
    private String joiningDate;
    private String jobTitle;
@@ -53,7 +53,7 @@ public class Staff implements Serializable {
         return qualification;
     }
 
-    public String getEmployerId() {
+    public int getEmployerId() {
         return employerId;
     }
 
@@ -102,7 +102,7 @@ public class Staff implements Serializable {
         this.qualification = qualification;
     }
 
-    public void setEmployerId(String employerId) {
+    public void setEmployerId(int employerId) {
         this.employerId = employerId;
     }
 
