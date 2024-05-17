@@ -70,7 +70,6 @@ public class AddStaffPage {
             addStaffStage.close();
         });
 
-
         rightPane.getChildren().addAll(heading1, sNameField, dobField, cnicField, genderField, gContactField, qualificationField, heading2, monthlySalaryField, jobTitleField, jobTypeField, workScheduleField);
         leftPane.getChildren().addAll(Utility.createTextLabel("Add New Staff", 30, 140, 530), backBtn, nextBtn);
         contentLayout.getChildren().addAll(leftPane, rightPane);

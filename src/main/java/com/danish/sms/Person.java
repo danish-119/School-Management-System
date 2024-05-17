@@ -87,4 +87,3 @@ public class Person {
         this.bloodGroup = bloodGroup;
     }
 }
-
