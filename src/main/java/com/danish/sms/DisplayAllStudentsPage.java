@@ -13,6 +13,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class DisplayAllStudentsPage {
 
     public void showDisplayAllStudentsPage(Stage studentManagementStage) {
@@ -134,8 +136,25 @@ public class DisplayAllStudentsPage {
         TableColumn<Student, String> academicInfoColumn = new TableColumn<>("Academic Information");
         academicInfoColumn.getColumns().addAll(admissionNumberColumn, classGradeColumn, sectionColumn, usernameColumn, passwordColumn, admissionDateColumn, monthlyFeeColumn, scholarshipStatusColumn, documentRequiredColumn, documentStatusColumn);
 
+        List<String> infoOnScreen = List.of("All Information", "Personal Information", "Guardian's Information", "Academic Information");
+        HBox infoOnScreenField = Utility.createSelect(infoOnScreen, 230, 50, 200, 200);
 
-        studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn, gardianInfoColumn, academicInfoColumn);
+        String infoType = UIControlUtils.extractValueFromComboBox(infoOnScreenField);
+
+        if(infoType.equals("All Information")) {
+            studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn, gardianInfoColumn, academicInfoColumn);
+        }
+        else if(infoType.equals("Personal Information")) {
+            studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn);
+        }
+        else if(infoType.equals("Guardian's Information")) {
+            studentTable.getColumns().addAll(studentIdColumn, gardianInfoColumn);
+        }
+        else if(infoType.equals("Academic Information")) {
+            studentTable.getColumns().addAll(studentIdColumn, academicInfoColumn);
+        }
+
+
 
         // Populate the table with data
         studentTable.setItems(studentList);
@@ -144,7 +163,7 @@ public class DisplayAllStudentsPage {
         rightPane.getChildren().add(studentTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Students Info", 30, 140, 530), backBtn, studentIdField, searchBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Students Info", 30, 140, 530), backBtn, studentIdField, searchBtn, infoOnScreenField);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

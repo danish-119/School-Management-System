@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class GetDataByIdFromMySQL {
 
-    public static Staff getStaffByIdFromDatabase(String staffId) {
+    public static Staff getStaffByIdFromDatabase(String employerId) {
         // Initialize the Staff object to null
         Staff staff = null;
 
@@ -23,7 +23,7 @@ public class GetDataByIdFromMySQL {
         try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
              PreparedStatement statement = conn.prepareStatement(sql)) {
             // Set the staff ID parameter
-            statement.setString(1, staffId);
+            statement.setString(1, employerId);
 
             // Execute the query
             try (ResultSet resultSet = statement.executeQuery()) {
