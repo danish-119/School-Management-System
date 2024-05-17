@@ -14,7 +14,7 @@ import java.util.List;
 
 public class AddStudentPage2 {
 
-    public void showAddStudentPage(Stage addStudentStage1, Student student) {
+    public void showAddStudentPage(Stage studentManagementStage, Stage addStudentStage1, Student student) {
         Stage addStudentStage2 = new Stage();
         addStudentStage2.setFullScreen(true);
         addStudentStage2.setFullScreenExitHint("");
@@ -74,6 +74,8 @@ public class AddStudentPage2 {
             SaveDataToMySQL.saveStudentInfo(student);
 
             addStudentStage2.close();
+            studentManagementStage.show();
+
         });
 
         rightPane.getChildren().addAll(heading1,admissionNumberField,classGradeField,sectionField,usernameField,passwordField, heading2,monthlyFeeField,scholarshipStatusField,documentStatusField, documentField);

@@ -79,7 +79,7 @@ public class DisplayAllStaffPage {
         TableColumn<Staff, Double> salaryColumn = new TableColumn<>("Monthly Salary");
         salaryColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getMonthlySalary()));
 
-        // Add columns to the table
+        //
         TableColumn<Staff, String> personalInfoColumn = new TableColumn<>("Personal Information");
         personalInfoColumn.getColumns().addAll(fullNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, contactColumn,qualificationColumn);
 

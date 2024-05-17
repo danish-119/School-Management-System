@@ -80,7 +80,7 @@ public class AddStudentPage1 {
 
             // Proceed to the next page or close the stage as needed
             AddStudentPage2 addStudentPage2 = new AddStudentPage2();
-            addStudentPage2.showAddStudentPage(addStudentStage1, student);
+            addStudentPage2.showAddStudentPage(studentManagementMenu, addStudentStage1, student);
             addStudentStage1.close();
         });
 

@@ -56,6 +56,49 @@ public class LoadDataFromMySQL {
         return studentList;
     }
 
+    public static ObservableList<Teacher> loadTeacherData() {
+        ObservableList<Teacher> teacherList = FXCollections.observableArrayList();
+
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD)) {
+            String sql = "SELECT * FROM Teacher";
+            try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                ResultSet resultSet = statement.executeQuery();
+                while (resultSet.next()) {
+                    Teacher teacher = new Teacher();
+                    teacher.setTeacherId(resultSet.getInt("teacherId"));
+                    teacher.setTeacherName(resultSet.getString("teacherName"));
+                    teacher.setDob(String.valueOf(resultSet.getDate("dateOfBirth")));
+                    teacher.setGender(resultSet.getString("gender"));
+                    teacher.setCnic(resultSet.getString("cnicNumber"));
+                    teacher.setBloodGroup(resultSet.getString("bloodGroup"));
+                    teacher.setEmail(resultSet.getString("email"));
+                    teacher.setExperience(resultSet.getString("experience"));
+                    teacher.setExperienceYears(String.valueOf(resultSet.getInt("experienceYears")));
+                    teacher.setUniversityGraduatedFrom(resultSet.getString("universityGraduatedFrom"));
+                    teacher.setQualification(resultSet.getString("qualification"));
+                    teacher.setMajorSubject(resultSet.getString("majorSubject"));
+                    teacher.setJobTitle(resultSet.getString("jobTitle"));
+                    teacher.setJobType(resultSet.getString("jobType"));
+                    teacher.setDepartment(resultSet.getString("department"));
+                    teacher.setJoiningDate(String.valueOf(resultSet.getTimestamp("joiningDate")));
+                    teacher.setMonthlySalary(resultSet.getDouble("monthlySalary"));
+                    teacher.setBankForDirectDeposit(resultSet.getString("bankForDirectDeposit"));
+                    teacher.setDocumentRequired(resultSet.getString("documentRequired"));
+                    teacher.setDocumentStatus(resultSet.getString("documentStatus"));
+                    teacher.setUsername(resultSet.getString("username"));
+                    teacher.setPassword(resultSet.getString("password"));
+                    teacherList.add(teacher);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return teacherList;
+    }
+
     public static ObservableList<Staff> loadStaffData() {
         ObservableList<Staff> staffList = FXCollections.observableArrayList();
 

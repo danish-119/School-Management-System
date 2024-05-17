@@ -77,6 +77,7 @@ public class Staff implements Serializable {
         return workSchedule;
     }
 
+
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }

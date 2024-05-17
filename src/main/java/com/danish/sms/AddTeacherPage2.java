@@ -14,7 +14,7 @@ import java.util.List;
 
 public class AddTeacherPage2 {
 
-    public void showAddTeacherPage(Stage addTeacherStage1, Teacher teacher) {
+    public void showAddTeacherPage(Stage teacherManagementMenu, Stage addTeacherStage1, Teacher teacher) {
         Stage addTeacherStage2 = new Stage();
         addTeacherStage2.setFullScreen(true);
         addTeacherStage2.setFullScreenExitHint("");
@@ -72,6 +72,7 @@ public class AddTeacherPage2 {
             SaveDataToMySQL.saveTeacherInfo(teacher);
 
             addTeacherStage2.close();
+            teacherManagementMenu.show();
         });
 
 

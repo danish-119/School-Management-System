@@ -76,7 +76,7 @@ public class AddTeacherPage1 {
             //-------------------------------
             addTeacherStage1.close();
             AddTeacherPage2 addTeacherPage2 = new AddTeacherPage2();
-            addTeacherPage2.showAddTeacherPage(addTeacherStage1, teacher );
+            addTeacherPage2.showAddTeacherPage(teacherManagementMenu, addTeacherStage1, teacher );
         });
 
 
