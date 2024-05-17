@@ -2,21 +2,19 @@ package com.danish.sms;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DisplayAllStudentsPage {
-
     public void showDisplayAllStudentsPage(Stage studentManagementStage) {
         Stage displayAllStudentsStage = new Stage();
         displayAllStudentsStage.setFullScreen(true);
@@ -26,6 +24,16 @@ public class DisplayAllStudentsPage {
         HBox contentLayout = Utility.createContentLayout();
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
+
+        ObservableList<Student> filteredList = FXCollections.observableArrayList();
+        // Load data from the database
+        ObservableList<Student> studentList = LoadDataFromMySQL.loadStudentData();
+        // Create a TableView and define columns
+        TableView<Student> studentTable = new TableView<>();
+        studentTable.setStyle("-fx-background-color: #f0f0f0; -fx-font-size: 14px; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 5px;");
+        studentTable.setPrefHeight(800);
+        studentTable.setPrefWidth(800);
+
 
         Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
         backBtn.setOnAction(event -> {
@@ -41,17 +49,20 @@ public class DisplayAllStudentsPage {
         Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
-            String employerId = studentIdField.getText();
+            String studentId = studentIdField.getText();
+            if (studentId.isEmpty()) {
+                studentTable.setItems(studentList);
+            } else {
+                filteredList.clear();
+                List<Student> filteredStudents = studentList.stream()
+                        .filter(student -> Integer.toString(student.getStudentId()).equals(studentId))
+                        .collect(Collectors.toList());
+                filteredList.addAll(filteredStudents);
+                studentTable.setItems(filteredList);
+            }
         });
 
-        // Load data from the database
-        ObservableList<Student> studentList = LoadDataFromMySQL.loadStudentData();
 
-        // Create a TableView and define columns
-        TableView<Student> studentTable = new TableView<>();
-        studentTable.setStyle("-fx-background-color: #f0f0f0; -fx-font-size: 14px; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 5px;");
-        studentTable.setPrefHeight(800);
-        studentTable.setPrefWidth(800);
 
         TableColumn<Student, String> studentIdColumn = new TableColumn<>("Student ID");
         studentIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(Integer.toString(cellData.getValue().getStudentId())));
@@ -130,35 +141,41 @@ public class DisplayAllStudentsPage {
         TableColumn<Student, String> personalInfoColumn = new TableColumn<>("Personal Information");
         personalInfoColumn.getColumns().addAll(studentNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, bloodGroupColumn, emailColumn, extracurricularColumn);
 
-        TableColumn<Student, String> gardianInfoColumn = new TableColumn<>("Gardian's Information");
-        gardianInfoColumn.getColumns().addAll(guardianNameColumn, guardianRelationColumn, guardianCnicColumn, guardianOccupationColumn, guardianContactColumn, jobTypeColumn);
+        TableColumn<Student, String> guardianInfoColumn = new TableColumn<>("Gardian's Information");
+        guardianInfoColumn.getColumns().addAll(guardianNameColumn, guardianRelationColumn, guardianCnicColumn, guardianOccupationColumn, guardianContactColumn, jobTypeColumn);
 
         TableColumn<Student, String> academicInfoColumn = new TableColumn<>("Academic Information");
         academicInfoColumn.getColumns().addAll(admissionNumberColumn, classGradeColumn, sectionColumn, usernameColumn, passwordColumn, admissionDateColumn, monthlyFeeColumn, scholarshipStatusColumn, documentRequiredColumn, documentStatusColumn);
 
         List<String> infoOnScreen = List.of("All Information", "Personal Information", "Guardian's Information", "Academic Information");
-        HBox infoOnScreenField = Utility.createSelect(infoOnScreen, 230, 50, 200, 200);
+        ComboBox<String> infoOnScreenField = new ComboBox<>();
+        infoOnScreenField.getItems().addAll(infoOnScreen);
+        infoOnScreenField.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 14px; -fx-background-color: #f9f9f9; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 2px;");
+        infoOnScreenField.setValue("All Information");
+        infoOnScreenField.setPrefSize(230,50);
 
-        String infoType = UIControlUtils.extractValueFromComboBox(infoOnScreenField);
+        infoOnScreenField.valueProperty().addListener((observable, oldValue, newValue) -> {
+            studentTable.getColumns().clear(); // Clear existing columns
+            if (newValue.equals("All Information")) {
+                studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn, guardianInfoColumn, academicInfoColumn);
+            } else if (newValue.equals("Personal Information")) {
+                studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn);
+            } else if (newValue.equals("Guardian's Information")) {
+                studentTable.getColumns().addAll(studentIdColumn, guardianInfoColumn);
+            } else if (newValue.equals("Academic Information")) {
+                studentTable.getColumns().addAll(studentIdColumn, academicInfoColumn);
+            }
+        });
 
-        if(infoType.equals("All Information")) {
-            studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn, gardianInfoColumn, academicInfoColumn);
-        }
-        else if(infoType.equals("Personal Information")) {
-            studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn);
-        }
-        else if(infoType.equals("Guardian's Information")) {
-            studentTable.getColumns().addAll(studentIdColumn, gardianInfoColumn);
-        }
-        else if(infoType.equals("Academic Information")) {
-            studentTable.getColumns().addAll(studentIdColumn, academicInfoColumn);
-        }
+        // Set default columns
+        studentTable.getColumns().addAll(studentIdColumn, personalInfoColumn, guardianInfoColumn, academicInfoColumn);
 
 
 
         // Populate the table with data
         studentTable.setItems(studentList);
 
+        studentTable.setItems(studentList);
         // Add the TableView to the rightPane
         rightPane.getChildren().add(studentTable);
 

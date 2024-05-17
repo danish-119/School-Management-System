@@ -7,6 +7,7 @@
     <list default="true" id="a19c63a9-1e2d-4238-8794-e88960b68db5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/GetDataByIdFromMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/GetDataByIdFromMySQL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +86,8 @@
       <option name="presentableId" value="Default" />
       <updated>1715944865487</updated>
       <workItem from="1715944872929" duration="3982000" />
-      <workItem from="1715961154094" duration="898000" />
+      <workItem from="1715961154094" duration="1548000" />
+      <workItem from="1715962778179" duration="1757000" />
     </task>
     <servers />
   </component>
