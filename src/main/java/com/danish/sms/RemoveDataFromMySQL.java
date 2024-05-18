@@ -11,6 +11,20 @@ public class RemoveDataFromMySQL {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
 
+    public static boolean removeStudentFromDatabase(String studentId) {
+        String sql = "DELETE FROM Student WHERE studentId = ?";
+
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+             PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setString(1, studentId);
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.out.println("Error removing student from database: " + e.getMessage());
+            return false;
+        }
+    }
+
     // Method to remove staff from the database
     public static boolean removeStaffFromDatabase(String employerId) {
 
@@ -22,8 +36,8 @@ public class RemoveDataFromMySQL {
             statement.setString(1, employerId);
 
             // Execute the delete operation
-           statement.executeUpdate();
-            return true;
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected > 0;
         } catch (SQLException e) {
             System.out.println("Error removing staff from database: " + e.getMessage());
             return false;

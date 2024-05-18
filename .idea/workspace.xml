@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a19c63a9-1e2d-4238-8794-e88960b68db5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/GetDataByIdFromMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/GetDataByIdFromMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveDataFromMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveDataFromMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,25 +42,25 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "mysqldb",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/danish/Downloads/mysql-connector-j_8.4.0-1ubuntu22.04_all/usr/share/java/mysql-connector-j-8.4.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.09813541",
-    "project.structure.side.proportion": "0.26862925",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mysqldb&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/danish/Downloads/mysql-connector-j_8.4.0-1ubuntu22.04_all/usr/share/java/mysql-connector-j-8.4.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.09813541&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.26862925&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="School Management System" />
@@ -92,7 +96,8 @@
       <workItem from="1715961154094" duration="1548000" />
       <workItem from="1715962778179" duration="3045000" />
       <workItem from="1715970144171" duration="1691000" />
-      <workItem from="1716000397092" duration="3721000" />
+      <workItem from="1716000397092" duration="4488000" />
+      <workItem from="1716022129980" duration="3931000" />
     </task>
     <servers />
   </component>
