@@ -21,13 +21,9 @@ public class RemoveStaffPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        TextField staffIdField = new TextField();
-        staffIdField.setPromptText("Enter Staff ID");
-        staffIdField.setPrefWidth(200);
-        staffIdField.setLayoutX(50);
-        staffIdField.setLayoutY(200);
+        TextField staffIdField = Utility.createTextField("Enter Employer ID", 50, 50);
 
-        Button searchBtn = Utility.createButton("Search", 100, 50, 270, 200);
+        Button searchBtn = Utility.createButton("Search", 100, 50, 370, 50);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
             String staffId = staffIdField.getText();

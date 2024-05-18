@@ -21,13 +21,10 @@ public class RemoveStudentPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        TextField studentIdField = new TextField();
-        studentIdField.setPromptText("Enter Student ID");
-        studentIdField.setPrefWidth(200);
-        studentIdField.setLayoutX(50);
-        studentIdField.setLayoutY(200);
+        TextField studentIdField = Utility.createTextField("Enter Student ID", 50, 50);
 
-        Button searchBtn = Utility.createButton("Search", 100, 50, 270, 200);
+        Button searchBtn = Utility.createButton("Search", 100, 50, 370, 50);
+
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
             String studentId = studentIdField.getText();
