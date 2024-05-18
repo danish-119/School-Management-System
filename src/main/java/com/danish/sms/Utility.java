@@ -154,8 +154,7 @@ public class Utility {
     }
 
     //  Method to create the user image
-    public static ImageView createImage(String imgPath) throws FileNotFoundException {
-
+    public static ImageView createImage(String imgPath){
         ImageView userImage = new ImageView(new Image(imgPath));
         userImage.setFitWidth(350);
         userImage.setFitHeight(350);
