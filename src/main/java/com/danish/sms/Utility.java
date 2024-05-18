@@ -63,7 +63,7 @@ public class Utility {
     // Method to create a button
     public static Button createButton(String text, int width, int height, int layoutX, int layoutY) {
         Button continueBtn = new Button(text);
-        continueBtn.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 20px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 10px; -fx-border-color: #388E3C;");
+        continueBtn.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 20px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 10px; -fx-border-color: #388E3C; -fx-cursor: hand;");
         continueBtn.setPrefSize(width, height);
         continueBtn.setLayoutX(layoutX);
         continueBtn.setLayoutY(layoutY);

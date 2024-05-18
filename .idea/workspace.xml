@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a19c63a9-1e2d-4238-8794-e88960b68db5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DataHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -90,6 +94,7 @@
       <workItem from="1715961154094" duration="1548000" />
       <workItem from="1715962778179" duration="3045000" />
       <workItem from="1715970144171" duration="1691000" />
+      <workItem from="1716000397092" duration="296000" />
     </task>
     <servers />
   </component>

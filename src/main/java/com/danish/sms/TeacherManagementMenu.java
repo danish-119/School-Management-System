@@ -20,7 +20,7 @@ public class TeacherManagementMenu {
         HBox contentLayout = Utility.createContentLayout();
 
         // Create buttons
-        Button addTeacherBtn = Utility.createButton("Add Teacher", 300, 20, 200, 240);
+        Button addTeacherBtn = Utility.createButton("Add Teacher", 300, 50, 200, 240);
         addTeacherBtn.setOnAction(event -> {
             System.out.println("Add Teacher Button Clicked!");
             teacherManagementStage.close();
@@ -34,14 +34,14 @@ public class TeacherManagementMenu {
           UpdateTeacherPage updateTeacherPage1 = new UpdateTeacherPage();
           updateTeacherPage1.showUpdateTeacherPage(teacherManagementStage);
         });
-        Button removeTeacherBtn = Utility.createButton("Remove Teacher", 300, 20, 200, 380);
+        Button removeTeacherBtn = Utility.createButton("Remove Teacher", 300, 50, 200, 380);
         removeTeacherBtn.setOnAction(event ->{
             System.out.println("Remove Teacher Button Clicked!");
             teacherManagementStage.close();
             RemoveTeacherPage removeTeacherPage1 = new RemoveTeacherPage();
             removeTeacherPage1.showRemoveTeacherPage(teacherManagementStage);
         });
-        Button displayAllTeacherBtn = Utility.createButton("Display All Teachers", 300, 20, 200, 450);
+        Button displayAllTeacherBtn = Utility.createButton("Display All Teachers", 300, 50, 200, 450);
         displayAllTeacherBtn.setOnAction(event ->{
             System.out.println("Display All Teachers Button Clicked!");
             teacherManagementStage.close();
