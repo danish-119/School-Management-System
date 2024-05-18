@@ -20,7 +20,7 @@ The primary objective of this project is to design and implement a user-friendly
 
 5. **Financial Analysis**: Modules to calculate and analyze financial aspects, such as total salary expenses for faculty and staff, and revenue generated from student fees.
 
-6. **Data Management**: Utilization of either binary file handling or MySQL database management system for efficient storage, retrieval, and manipulation of information.
+6. **Data Management**: Utilization of MySQL database management system for efficient storage, retrieval, and manipulation of information.
 
 ## Future Enhancements
 
