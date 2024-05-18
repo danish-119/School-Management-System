@@ -51,13 +51,13 @@ public class DisplayAllStaffPage {
         Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
-            String studentId = employerIdField.getText();
-            if (studentId.isEmpty()) {
+            String employerId = employerIdField.getText();
+            if (employerId.isEmpty()) {
                 staffTable.setItems(staffList);
             } else {
                 filteredList.clear();
                 List<Staff> filteredStaff = staffList.stream()
-                        .filter(student -> Integer.toString(student.getEmployerId()).equals(studentId))
+                        .filter(staff -> Integer.toString(staff.getEmployerId()).equals(employerId))
                         .collect(Collectors.toList());
                 filteredList.addAll(filteredStaff);
                 staffTable.setItems(filteredList);
@@ -109,6 +109,27 @@ public class DisplayAllStaffPage {
         TableColumn<Staff, String> professionalInfoColumn = new TableColumn<>("Professional Information");
         professionalInfoColumn.getColumns().addAll( joiningDateColumn, jobTitleColumn, jobTypeColumn, workScheduleColumn, salaryColumn);
 
+
+        List<String> infoOnScreen = List.of("All Information", "Personal Information", "Professional Information", "Salary");
+        ComboBox<String> infoOnScreenField = new ComboBox<>();
+        infoOnScreenField.getItems().addAll(infoOnScreen);
+        infoOnScreenField.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 14px; -fx-background-color: #f9f9f9; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 2px;");
+        infoOnScreenField.setValue("All Information");
+        infoOnScreenField.setPrefSize(230,50);
+
+        infoOnScreenField.valueProperty().addListener((observable, oldValue, newValue) -> {
+            staffTable.getColumns().clear(); // Clear existing columns
+            if (newValue.equals("All Information")) {
+                staffTable.getColumns().addAll(employerIdColumn, personalInfoColumn, professionalInfoColumn);
+            } else if (newValue.equals("Personal Information")) {
+                staffTable.getColumns().addAll(employerIdColumn, personalInfoColumn);
+            } else if (newValue.equals("Professional Information")) {
+                staffTable.getColumns().addAll(employerIdColumn, professionalInfoColumn);
+            } else if (newValue.equals("Salary")) {
+                staffTable.getColumns().addAll(employerIdColumn, fullNameColumn, salaryColumn);
+            }
+        });
+        
         // Add columns to the table
         staffTable.getColumns().addAll(employerIdColumn, personalInfoColumn, professionalInfoColumn);
 
@@ -117,7 +138,7 @@ public class DisplayAllStaffPage {
         rightPane.getChildren().add(staffTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Staff Info", 30, 140, 530), backBtn, employerIdField, searchBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Staff Info", 30, 140, 530), backBtn, employerIdField, searchBtn,infoOnScreenField);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
