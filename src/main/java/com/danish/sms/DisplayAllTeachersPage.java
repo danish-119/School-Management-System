@@ -134,29 +134,44 @@ public class DisplayAllTeachersPage {
         TableColumn<Teacher, String> passwordColumn = new TableColumn<>("Password");
         passwordColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPassword()));
 
+        // Add columns to the table
+        TableColumn<Teacher, String> personalInfoColumn = new TableColumn<>("Personal Information");
+        personalInfoColumn.getColumns().addAll(teacherNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, bloodGroupColumn, emailColumn);
 
-        List<String> infoOnScreen = List.of("All Information", "Personal Information", "Guardian's Information", "Academic Information");
+        TableColumn<Teacher, String> professionalInfoColumn = new TableColumn<>("Professional Information");
+        professionalInfoColumn.getColumns().addAll( experienceColumn, experienceYearsColumn, universityColumn, qualificationColumn, majorSubjectColumn);
+
+        TableColumn<Teacher, String> employmentInfoColumn = new TableColumn<>("Employment Information");
+        employmentInfoColumn.getColumns().addAll(joiningDateColumn, jobTitleColumn, jobTypeColumn, departmentColumn, usernameColumn, passwordColumn);
+
+        TableColumn<Teacher, String> otherInfoColumn = new TableColumn<>("Other Information");
+        otherInfoColumn.getColumns().addAll( monthlySalaryColumn, bankColumn, documentRequiredColumn, documentStatusColumn);
+
+        
+        List<String> infoOnScreen = List.of("All Information", "Personal Information", "Employment Information", "Professional Information", "Other Information");
         ComboBox<String> infoOnScreenField = new ComboBox<>();
         infoOnScreenField.getItems().addAll(infoOnScreen);
         infoOnScreenField.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 14px; -fx-background-color: #f9f9f9; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 2px;");
         infoOnScreenField.setValue("All Information");
         infoOnScreenField.setPrefSize(230,50);
 
-//        infoOnScreenField.valueProperty().addListener((observable, oldValue, newValue) -> {
-//            teacherTable.getColumns().clear(); // Clear existing columns
-//            if (newValue.equals("All Information")) {
-//                teacherTable.getColumns().addAll(teacherIdColumn, personalInfoColumn, guardianInfoColumn, academicInfoColumn);
-//            } else if (newValue.equals("Personal Information")) {
-//                teacherTable.getColumns().addAll(teacherIdColumn, personalInfoColumn);
-//            } else if (newValue.equals("Guardian's Information")) {
-//                teacherTable.getColumns().addAll(teacherIdColumn, guardianInfoColumn);
-//            } else if (newValue.equals("Academic Information")) {
-//                teacherTable.getColumns().addAll(teacherIdColumn, academicInfoColumn);
-//            }
-//        });
+        infoOnScreenField.valueProperty().addListener((observable, oldValue, newValue) -> {
+            teacherTable.getColumns().clear(); // Clear existing columns
+            if (newValue.equals("All Information")) {
+                teacherTable.getColumns().addAll(teacherIdColumn, personalInfoColumn, professionalInfoColumn, employmentInfoColumn, otherInfoColumn);
+            } else if (newValue.equals("Personal Information")) {
+                teacherTable.getColumns().addAll(teacherIdColumn, personalInfoColumn);
+            } else if (newValue.equals("Employment Information")) {
+                teacherTable.getColumns().addAll(teacherIdColumn, employmentInfoColumn);
+            } else if (newValue.equals("Professional Information")) {
+                teacherTable.getColumns().addAll(teacherIdColumn, professionalInfoColumn);
+            } else if (newValue.equals("Other Information")) {
+                teacherTable.getColumns().addAll(teacherIdColumn, otherInfoColumn);
+            }
+        });
 
         // Add columns to the table
-        teacherTable.getColumns().addAll(teacherIdColumn, teacherNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, bloodGroupColumn, emailColumn, experienceColumn, experienceYearsColumn, universityColumn, qualificationColumn, majorSubjectColumn, jobTitleColumn, jobTypeColumn, departmentColumn, joiningDateColumn, monthlySalaryColumn, bankColumn, documentRequiredColumn, documentStatusColumn, usernameColumn, passwordColumn);
+        teacherTable.getColumns().addAll(teacherIdColumn, personalInfoColumn,professionalInfoColumn, employmentInfoColumn, otherInfoColumn);
 
         // Populate the table with data
         teacherTable.setItems(teacherList);
@@ -165,7 +180,7 @@ public class DisplayAllTeachersPage {
         rightPane.getChildren().add(teacherTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, 140, 530), backBtn, teacherIdField,searchBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, 140, 530), backBtn, teacherIdField,searchBtn,infoOnScreenField);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

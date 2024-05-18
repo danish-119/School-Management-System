@@ -35,7 +35,7 @@ public class LandingPage extends Application {
 
         // Create left pane
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome User!", 30, 140, 530), Utility.createImage("smsIcon.png"));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome User!", 30, 140, 530));
 
         // Create right pane
         Pane rightPane = Utility.createRightPane();
