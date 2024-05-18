@@ -25,6 +25,20 @@ public class RemoveDataFromMySQL {
         }
     }
 
+    public static boolean removeTeacherFromDatabase(String teacherId) {
+        String sql = "DELETE FROM Teacher WHERE teacherId = ?";
+
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+             PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setString(1, teacherId);
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.out.println("Error removing teacher from database: " + e.getMessage());
+            return false;
+        }
+    }
+
     // Method to remove staff from the database
     public static boolean removeStaffFromDatabase(String employerId) {
 

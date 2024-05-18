@@ -6,15 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="a19c63a9-1e2d-4238-8794-e88960b68db5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/GetDataByIdFromMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/GetDataByIdFromMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveDataFromMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveDataFromMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -97,7 +101,8 @@
       <workItem from="1715962778179" duration="3045000" />
       <workItem from="1715970144171" duration="1691000" />
       <workItem from="1716000397092" duration="4488000" />
-      <workItem from="1716022129980" duration="3931000" />
+      <workItem from="1716022129980" duration="4875000" />
+      <workItem from="1716032675146" duration="1393000" />
     </task>
     <servers />
   </component>

@@ -18,18 +18,18 @@ public class UpdateStudentPage {
         HBox contentLayout = Utility.createContentLayout();
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
-        
+
         Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             studentManagementStage.show();
             updateStudentStage.close();
         });
-        
+
         Button updateBtn = Utility.createButton("Update", 120, 50, 360, 730);
         updateBtn.setOnAction(event -> {
             System.out.println("Update Button Clicked!");
-            
+
             updateStudentStage.close();
             studentManagementStage.show();
         });
