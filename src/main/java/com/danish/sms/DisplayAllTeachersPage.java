@@ -7,10 +7,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -136,6 +133,27 @@ public class DisplayAllTeachersPage {
 
         TableColumn<Teacher, String> passwordColumn = new TableColumn<>("Password");
         passwordColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPassword()));
+
+
+        List<String> infoOnScreen = List.of("All Information", "Personal Information", "Guardian's Information", "Academic Information");
+        ComboBox<String> infoOnScreenField = new ComboBox<>();
+        infoOnScreenField.getItems().addAll(infoOnScreen);
+        infoOnScreenField.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 14px; -fx-background-color: #f9f9f9; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 2px;");
+        infoOnScreenField.setValue("All Information");
+        infoOnScreenField.setPrefSize(230,50);
+
+//        infoOnScreenField.valueProperty().addListener((observable, oldValue, newValue) -> {
+//            teacherTable.getColumns().clear(); // Clear existing columns
+//            if (newValue.equals("All Information")) {
+//                teacherTable.getColumns().addAll(teacherIdColumn, personalInfoColumn, guardianInfoColumn, academicInfoColumn);
+//            } else if (newValue.equals("Personal Information")) {
+//                teacherTable.getColumns().addAll(teacherIdColumn, personalInfoColumn);
+//            } else if (newValue.equals("Guardian's Information")) {
+//                teacherTable.getColumns().addAll(teacherIdColumn, guardianInfoColumn);
+//            } else if (newValue.equals("Academic Information")) {
+//                teacherTable.getColumns().addAll(teacherIdColumn, academicInfoColumn);
+//            }
+//        });
 
         // Add columns to the table
         teacherTable.getColumns().addAll(teacherIdColumn, teacherNameColumn, dateOfBirthColumn, genderColumn, cnicColumn, bloodGroupColumn, emailColumn, experienceColumn, experienceYearsColumn, universityColumn, qualificationColumn, majorSubjectColumn, jobTitleColumn, jobTypeColumn, departmentColumn, joiningDateColumn, monthlySalaryColumn, bankColumn, documentRequiredColumn, documentStatusColumn, usernameColumn, passwordColumn);

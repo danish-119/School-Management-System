@@ -34,14 +34,14 @@ public class StudentManagementMenu {
             UpdateStudentPage updateStudentPage = new UpdateStudentPage();
             updateStudentPage.showUpdateStudentPage(studentManagementStage);
         });
-        Button removeStudentBtn = Utility.createButton("Remove Student", 300, 20, 200, 380);
+        Button removeStudentBtn = Utility.createButton("Remove Student", 300, 50, 200, 380);
         removeStudentBtn.setOnAction(event -> {
             System.out.println("Remove Student Button Clicked!");
             studentManagementStage.close();
             RemoveStudentPage removeStudentPage = new RemoveStudentPage();
             removeStudentPage.showRemoveStudentPage(studentManagementStage);
         });
-        Button displayAllStudentBtn = Utility.createButton("Display All Students", 300, 20, 200, 450);
+        Button displayAllStudentBtn = Utility.createButton("Display All Students", 300, 50, 200, 450);
         displayAllStudentBtn.setOnAction(event -> {
             System.out.println("Display All Student Button Clicked!");
             studentManagementStage.close();
