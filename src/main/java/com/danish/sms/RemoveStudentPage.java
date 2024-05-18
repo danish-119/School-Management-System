@@ -27,6 +27,9 @@ public class RemoveStudentPage {
 
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
+            rightPane.getChildren().clear();
+            rightPane.getChildren().addAll(studentIdField, searchBtn);
+
             String studentId = studentIdField.getText();
             // Call a method to fetch student information by ID from the database
             Student student = GetDataByIdFromMySQL.getStudentById(studentId);
@@ -37,13 +40,13 @@ public class RemoveStudentPage {
                 studentInfoLabel.setLayoutY(250);
                 rightPane.getChildren().add(studentInfoLabel);
             } else {
-                // Show error message if student not found
                 Label errorLabel = new Label("Student not found!");
                 errorLabel.setLayoutX(50);
                 errorLabel.setLayoutY(250);
                 rightPane.getChildren().add(errorLabel);
             }
         });
+
 
         Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
         backBtn.setOnAction(event -> {

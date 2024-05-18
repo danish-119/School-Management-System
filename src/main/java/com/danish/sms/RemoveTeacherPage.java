@@ -26,6 +26,9 @@ public class RemoveTeacherPage {
         Button searchBtn = Utility.createButton("Search", 100, 50, 370, 50);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
+            rightPane.getChildren().clear();
+            rightPane.getChildren().addAll(teacherIdField, searchBtn);
+
             String teacherId = teacherIdField.getText();
             // Call a method to fetch teacher information by ID from the database
             Teacher teacher = GetDataByIdFromMySQL.getTeacherById(teacherId);
