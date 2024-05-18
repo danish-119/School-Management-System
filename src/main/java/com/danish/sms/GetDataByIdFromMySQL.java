@@ -95,7 +95,7 @@ public class GetDataByIdFromMySQL {
                     teacher.setJobTitle(resultSet.getString("jobTitle"));
                     teacher.setJobType(resultSet.getString("jobType"));
                     teacher.setDepartment(resultSet.getString("department"));
-                    teacher.setJoiningDate(resultSet.getTimestamp("joiningDate").toLocalDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+//                    teacher.setJoiningDate(resultSet.getTimestamp("joiningDate").toLocalDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
                     teacher.setMonthlySalary(resultSet.getDouble("monthlySalary"));
                     teacher.setBankForDirectDeposit(resultSet.getString("bankForDirectDeposit"));
                     teacher.setDocumentRequired(resultSet.getString("documentRequired"));
