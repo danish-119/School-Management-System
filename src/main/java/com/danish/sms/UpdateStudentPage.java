@@ -1,5 +1,6 @@
 package com.danish.sms;
 
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -71,8 +72,15 @@ public class UpdateStudentPage {
                 Label jobType = Utility.createTextLabel("Job Type", 16, 525, 690);
                 List<String> jobTypeOptions = List.of("Governmental", "Private");
                 HBox jobTypeField = Utility.createRadioButtonSelect(jobTypeOptions, 430, 720);
-                // Set default value for jobType RadioButton
-
+                for (Node node : jobTypeField.getChildren()) {
+                    if (node instanceof RadioButton) {
+                        RadioButton radioButton = (RadioButton) node;
+                        if (radioButton.getText().equalsIgnoreCase(student.getJobType())) {
+                            radioButton.setSelected(true);
+                            break;
+                        }
+                    }
+                }
 
                 rightPane.getChildren().addAll(
                         heading1, /*sNameLabel, sNameField, fNameLabel, fNameField, dobField, sCnicLabel, sCnicField, bloodGroupLabel, bloodGroupField,
