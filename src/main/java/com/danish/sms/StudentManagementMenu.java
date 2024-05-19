@@ -31,8 +31,8 @@ public class StudentManagementMenu {
         updateStudentBtn.setOnAction(event ->{
             System.out.println("Update Student Button Clicked!");
             studentManagementStage.close();
-            UpdateStudentPage updateStudentPage = new UpdateStudentPage();
-            updateStudentPage.showUpdateStudentPage(studentManagementStage);
+            UpdateStudentPage1 updateStudentPage = new UpdateStudentPage1();
+            updateStudentPage.showUpdateStudentPage1(studentManagementStage);
         });
         Button removeStudentBtn = Utility.createButton("Remove Student", 300, 50, 200, 380);
         removeStudentBtn.setOnAction(event -> {

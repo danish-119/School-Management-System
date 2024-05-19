@@ -10,12 +10,12 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
-public class UpdateStudentPage {
+public class UpdateStudentPage1 {
 
-    public void showUpdateStudentPage(Stage studentManagementStage) {
-        Stage updateStudentStage = new Stage();
-        updateStudentStage.setFullScreen(true);
-        updateStudentStage.setFullScreenExitHint("");
+    public void showUpdateStudentPage1(Stage studentManagementStage) {
+        Stage updateStudentStage1 = new Stage();
+        updateStudentStage1.setFullScreen(true);
+        updateStudentStage1.setFullScreenExitHint("");
 
         VBox mainLayout = Utility.createMainLayout();
         HBox contentLayout = Utility.createContentLayout();
@@ -97,15 +97,19 @@ public class UpdateStudentPage {
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             studentManagementStage.show();
-            updateStudentStage.close();
+            updateStudentStage1.close();
         });
 
-        Button updateBtn = Utility.createButton("Update", 120, 50, 360, 730);
+        Button updateBtn = Utility.createButton("Next", 120, 50, 360, 730);
         updateBtn.setOnAction(event -> {
-            System.out.println("Update Button Clicked!");
+            System.out.println("Next Button Clicked!");
 
-            updateStudentStage.close();
-            studentManagementStage.show();
+
+            Student student = new Student();
+
+            updateStudentStage1.close();
+            UpdateStudentPage2 updateStudentPage2 = new UpdateStudentPage2();
+            updateStudentPage2.showUpdateStudentPage2(studentManagementStage, updateStudentStage1, student);
         });
 
         rightPane.getChildren().addAll(studentIdField,searchBtn);
@@ -114,7 +118,7 @@ public class UpdateStudentPage {
         mainLayout.getChildren().add(contentLayout);
 
         Scene scene = new Scene(mainLayout, 1200, 800);
-        updateStudentStage.setScene(scene);
-        updateStudentStage.show();
+        updateStudentStage1.setScene(scene);
+        updateStudentStage1.show();
     }
 }
