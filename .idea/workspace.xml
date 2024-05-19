@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a19c63a9-1e2d-4238-8794-e88960b68db5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStaffPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UIControlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UIControlUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/danish/sms/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +41,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2gao4kkZn34WaCXiS7zyDVRvLeN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -119,7 +116,8 @@
       <workItem from="1716032675146" duration="2020000" />
       <workItem from="1716037740068" duration="3848000" />
       <workItem from="1716054144841" duration="3233000" />
-      <workItem from="1716110396170" duration="4488000" />
+      <workItem from="1716110396170" duration="5421000" />
+      <workItem from="1716136806813" duration="1351000" />
     </task>
     <servers />
   </component>
