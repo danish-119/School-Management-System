@@ -60,15 +60,15 @@ public class AddTeacherPage1 {
             String teacherName = sNameField.getText().toUpperCase();
             String dob = UIControlUtils.extractValueFromDatePicker(dobField);
             String fatherName = fNameField.getText().toUpperCase();
-            String gender = UIControlUtils.extractValueFromComboBox(genderField);
+            String gender = (String) UIControlUtils.HBoxToComboBox(genderField).getValue();
             String cnic = sCnicField.getText();
-            String bloodGroup = UIControlUtils.extractValueFromComboBox(bloodGroupField);
+            String bloodGroup = (String) UIControlUtils.HBoxToComboBox(bloodGroupField).getValue();
             String email = emailField.getText().toLowerCase();
             String experience = experienceField.getText();
             String experienceYears = experienceYearField.getText();
-            String university = UIControlUtils.extractValueFromComboBox(graduatedFromField);
-            String qualification = UIControlUtils.extractValueFromComboBox(qualificationField);
-            String subject = UIControlUtils.extractValueFromComboBox(subjectField);
+            String university = (String) UIControlUtils.HBoxToComboBox(graduatedFromField).getValue();
+            String qualification = (String) UIControlUtils.HBoxToComboBox(qualificationField).getValue();
+            String subject = (String) UIControlUtils.HBoxToComboBox(subjectField).getValue();
 
             Teacher teacher = new Teacher();
             teacher.setTeacherDetails1(teacherName, dob, fatherName, gender, cnic, bloodGroup, email, experience, experienceYears, university, qualification, subject);

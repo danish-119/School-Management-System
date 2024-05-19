@@ -54,13 +54,13 @@ public class AddStaffPage {
             String fullName = sNameField.getText();
             String dateOfBirth = UIControlUtils.extractValueFromDatePicker(dobField);
             String cnicNumber = cnicField.getText();
-            String gender = UIControlUtils.extractValueFromComboBox(genderField);
+            String gender = (String) UIControlUtils.HBoxToComboBox(genderField).getValue();
             String contact = gContactField.getText();
-            String qualification = UIControlUtils.extractValueFromComboBox(qualificationField);
+            String qualification = (String) UIControlUtils.HBoxToComboBox(qualificationField).getValue();
             double monthlySalary = Double.parseDouble(monthlySalaryField.getText());
-            String jobTitle = UIControlUtils.extractValueFromComboBox(jobTitleField);
-            String jobType = UIControlUtils.extractValueFromComboBox(jobTypeField);
-            String workSchedule = UIControlUtils.extractValueFromComboBox(workScheduleField);
+            String jobTitle = (String) UIControlUtils.HBoxToComboBox(jobTitleField).getValue();
+            String jobType = (String) UIControlUtils.HBoxToComboBox(jobTypeField).getValue();
+            String workSchedule = (String) UIControlUtils.HBoxToComboBox(workScheduleField).getValue();
 
             Staff staff = new Staff();
             staff.setStaffDetails(fullName,dateOfBirth,cnicNumber,gender,contact,qualification,monthlySalary,jobTitle,jobType,workSchedule);

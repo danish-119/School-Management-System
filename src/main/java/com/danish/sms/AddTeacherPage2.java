@@ -58,13 +58,13 @@ public class AddTeacherPage2 {
         saveBtn.setOnAction(event -> {
             System.out.println("Save Button Clicked!");
             // Collect data entered on this page
-            String jobTitle = UIControlUtils.extractValueFromComboBox(jobTitleField);
-            String jobType = UIControlUtils.extractValueFromComboBox(jobTypeField);
-            String department = UIControlUtils.extractValueFromComboBox(departmentField);
+            String jobTitle = (String) UIControlUtils.HBoxToComboBox(jobTitleField).getValue();
+            String jobType = (String) UIControlUtils.HBoxToComboBox(jobTypeField).getValue();
+            String department = (String) UIControlUtils.HBoxToComboBox(departmentField).getValue();
             String password = passwordField.getText();
             double monthlySalary = Double.parseDouble(monthlySalaryField.getText());
-            String bank = UIControlUtils.extractValueFromComboBox(bankField);
-            String documentStatus = UIControlUtils.extractValueFromComboBox(documentStatusField);
+            String bank = (String) UIControlUtils.HBoxToComboBox(bankField).getValue();
+            String documentStatus = (String) UIControlUtils.HBoxToComboBox(documentStatusField).getValue();
             String documents = documentField.getText();
 
             teacher.setTeacherDetails2(jobTitle, jobType, department, password, monthlySalary, bank, documentStatus, documents);
