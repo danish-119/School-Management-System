@@ -61,13 +61,13 @@ public class AddStudentPage2 {
 
             // Collect data entered on this page
             String admissionNumber = admissionNumberField.getText();
-            String classGrade = UIControlUtils.extractValueFromComboBox(classGradeField);
-            String section = UIControlUtils.extractValueFromComboBox(sectionField);
+            String classGrade = (String) UIControlUtils.HBoxToComboBox(classGradeField).getValue();
+            String section = (String) UIControlUtils.HBoxToComboBox(sectionField).getValue();
             String username = usernameField.getText();
             String password = passwordField.getText();
             double monthlyFee = Double.parseDouble(monthlyFeeField.getText());
-            String scholarshipStatus = UIControlUtils.extractValueFromComboBox(scholarshipStatusField);
-            String documentStatus = UIControlUtils.extractValueFromComboBox(documentStatusField);
+            String scholarshipStatus =(String) UIControlUtils.HBoxToComboBox(scholarshipStatusField).getValue();
+            String documentStatus = (String) UIControlUtils.HBoxToComboBox(documentStatusField).getValue();
             String documents = documentField.getText();
 
             student.setStudentDetails2(admissionNumber, classGrade, section, password, monthlyFee, scholarshipStatus, documentStatus, documents);

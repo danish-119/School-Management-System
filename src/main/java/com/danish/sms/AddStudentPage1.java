@@ -62,15 +62,15 @@ public class AddStudentPage1 {
             String studentName = sNameField.getText().toUpperCase();
             String dob = UIControlUtils.extractValueFromDatePicker(dobField);
             String fatherName = fNameField.getText().toUpperCase();
-            String gender = UIControlUtils.extractValueFromComboBox(genderField);
+            String gender = (String) UIControlUtils.HBoxToComboBox(genderField).getValue();
             String cnic = sCnicField.getText();
-            String bloodGroup = UIControlUtils.extractValueFromComboBox(bloodGroupField);
+            String bloodGroup = (String) UIControlUtils.HBoxToComboBox(bloodGroupField).getValue();
             String email = emailField.getText().toLowerCase();
-            String extracurricular = UIControlUtils.extractValueFromComboBox(extracurricularField);
+            String extracurricular = (String) UIControlUtils.HBoxToComboBox(extracurricularField).getValue();
             String guardianName = gNameField.getText().toUpperCase();
-            String relation = UIControlUtils.extractValueFromComboBox(relationField);
+            String relation = (String) UIControlUtils.HBoxToComboBox(relationField).getValue();
             String guardianCnic = gCnicField.getText();
-            String occupation = UIControlUtils.extractValueFromComboBox(occupationField);
+            String occupation = (String) UIControlUtils.HBoxToComboBox(occupationField).getValue();
             String contact = gContactField.getText();
             String jobTypeSelected = UIControlUtils.extractSelectedRadioButtonText(jobTypeField);
 

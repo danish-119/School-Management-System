@@ -15,10 +15,9 @@ public class UIControlUtils {
         return datePicker.getValue().toString();
     }
 
-    // Method to extract value from ComboBox
-    public static String extractValueFromComboBox(HBox comboBoxContainer) {
-        ComboBox<String> comboBox = (ComboBox<String>) comboBoxContainer.getChildren().getFirst();
-        return comboBox.getValue();
+    // Method to change HBox to ComboBox
+    public static ComboBox HBoxToComboBox(HBox comboBoxContainer) {
+        return (ComboBox<String>) comboBoxContainer.getChildren().getFirst();
     }
 
     // Method to extract text of the selected radio button

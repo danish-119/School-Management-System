@@ -21,26 +21,23 @@ public class RemoveStaffPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        TextField staffIdField = new TextField();
-        staffIdField.setPromptText("Enter Staff ID");
-        staffIdField.setPrefWidth(200);
-        staffIdField.setLayoutX(50);
-        staffIdField.setLayoutY(200);
+        TextField staffIdField = Utility.createTextField("Enter Employer ID", 50, 50);
 
-        Button searchBtn = Utility.createButton("Search", 100, 50, 270, 200);
+        Button searchBtn = Utility.createButton("Search", 100, 50, 370, 50);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
+            rightPane.getChildren().clear();
+            rightPane.getChildren().addAll(staffIdField, searchBtn);
+
             String staffId = staffIdField.getText();
             // Call a method to fetch staff information by ID from the database
             Staff staff = GetDataByIdFromMySQL.getStaffByIdFromDatabase(staffId);
             if (staff != null) {
-                // Display staff information for removal
                 Label staffInfoLabel = new Label("Staff ID: " + staff.getEmployerId() + "\nFull Name: " + staff.getFullName() + "\nJob Title: " + staff.getJobTitle());
                 staffInfoLabel.setLayoutX(50);
                 staffInfoLabel.setLayoutY(250);
                 rightPane.getChildren().add(staffInfoLabel);
             } else {
-                // Show error message if staff not found
                 Label errorLabel = new Label("Staff not found!");
                 errorLabel.setLayoutX(50);
                 errorLabel.setLayoutY(250);
