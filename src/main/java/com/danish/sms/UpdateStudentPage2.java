@@ -12,7 +12,7 @@ import java.util.List;
 
 public class UpdateStudentPage2 {
 
-    public void showUpdateStudentPage2(Stage studentManagementStage, Stage updateStudentStage1 , Student student) {
+    public void showUpdateStudentPage2(Stage studentManagementStage, Stage updateStudentStage1 ,String studentId, Student updatedStudent) {
         Stage updateStudentStage2 = new Stage();
         updateStudentStage2.setFullScreen(true);
         updateStudentStage2.setFullScreenExitHint("");
@@ -21,6 +21,8 @@ public class UpdateStudentPage2 {
         HBox contentLayout = Utility.createContentLayout();
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
+
+        Student student = GetDataByIdFromMySQL.getStudentById(studentId);
 
         Label heading1 = Utility.createTextLabel("Academic Information:", 30, 100, 50);
 //        TextField admissionNumberField = Utility.createTextField("Admission Number", 100, 100);
