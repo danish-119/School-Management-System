@@ -22,6 +22,21 @@ public class UpdateStudentPage1 {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
+        TextField emailField = Utility.createTextField("abc123@example.com", 80, 400);
+        List<String> extracurricularOptions = List.of("Select Interest", "Sports", "Music", "Art", "Coding", "Writing", "Cooking", "Other");
+        HBox extracurricularField = Utility.createSelect(extracurricularOptions, 230, 50, 430, 400);
+        Label heading2 = Utility.createTextLabel("Parent/Guardian Information:", 30, 80, 480);
+        TextField gNameField = Utility.createTextField("Father's/Guardian Name", 80, 550);
+        List<String> relationOptions = List.of("Relation", "Parent", "Guardian", "Sibling", "Relative", "Other");
+        HBox relationField = Utility.createSelect(relationOptions, 230, 45, 430, 550);
+        TextField gCnicField = Utility.createTextField("CNIC Number", 80, 620);
+        List<String> occupationOptions = List.of("Occupation", "Doctor", "Engineer", "Teacher", "Nurse", "Artist", "Businessperson", "Homemaker", "Student", "Other");
+        HBox occupationField = Utility.createSelect(occupationOptions, 230, 45, 430, 620);
+        TextField gContactField = Utility.createTextField("Contact", 80, 690);
+        Label jobType = Utility.createTextLabel("Job Type", 16, 525, 690);
+        List<String> jobTypeOptions = List.of("Governmental", "Private");
+
+
         TextField studentIdField = Utility.createTextField("Enter Student ID", 80, 30);
 
         Button searchBtn = Utility.createButton("Search", 100, 50, 400, 30);
@@ -50,27 +65,21 @@ public class UpdateStudentPage1 {
 //                List<String> bloodGroupOptions = List.of("Blood Group", "A", "B", "AB", "O", "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-");
 //                Label bloodGroupLabel = Utility.createTextLabel("Blood Group:", 16, 80, 350);
 //                Label bloodGroupField = Utility.createTextLabel(student.getBloodGroup(), 18, 230, 350); // Field replaced by a label
-                TextField emailField = Utility.createTextField("abc123@example.com", 80, 400);
                 emailField.setText(student.getEmail());
-                List<String> extracurricularOptions = List.of("Select Interest", "Sports", "Music", "Art", "Coding", "Writing", "Cooking", "Other");
-                HBox extracurricularField = Utility.createSelect(extracurricularOptions, 230, 50, 430, 400);
+
                 UIControlUtils.HBoxToComboBox(extracurricularField).setValue(student.getExtracurricularInterest());
                 // ----------------------------------------------------
-                Label heading2 = Utility.createTextLabel("Parent/Guardian Information:", 30, 80, 480);
-                TextField gNameField = Utility.createTextField("Father's/Guardian Name", 80, 550);
+
                 gNameField.setText(student.getGuardianName());
-                List<String> relationOptions = List.of("Relation", "Parent", "Guardian", "Sibling", "Relative", "Other");
-                HBox relationField = Utility.createSelect(relationOptions, 230, 45, 430, 550);
+
                 UIControlUtils.HBoxToComboBox(relationField).setValue(student.getGuardianRelation());
-                TextField gCnicField = Utility.createTextField("CNIC Number", 80, 620);
+
                 gCnicField.setText(student.getGuardianCnic());
-                List<String> occupationOptions = List.of("Occupation", "Doctor", "Engineer", "Teacher", "Nurse", "Artist", "Businessperson", "Homemaker", "Student", "Other");
-                HBox occupationField = Utility.createSelect(occupationOptions, 230, 45, 430, 620);
+
                 UIControlUtils.HBoxToComboBox(occupationField).setValue(student.getGuardianOccupation());
-                TextField gContactField = Utility.createTextField("Contact", 80, 690);
+
                 gContactField.setText(student.getGuardianContact());
-                Label jobType = Utility.createTextLabel("Job Type", 16, 525, 690);
-                List<String> jobTypeOptions = List.of("Governmental", "Private");
+
                 HBox jobTypeField = Utility.createRadioButtonSelect(jobTypeOptions, 430, 720);
                 for (Node node : jobTypeField.getChildren()) {
                     if (node instanceof RadioButton) {
@@ -103,13 +112,21 @@ public class UpdateStudentPage1 {
         Button updateBtn = Utility.createButton("Next", 120, 50, 360, 730);
         updateBtn.setOnAction(event -> {
             System.out.println("Next Button Clicked!");
+            // Collect data entered by the user
+            String email = emailField.getText().toLowerCase();
+            String extracurricular = (String) UIControlUtils.HBoxToComboBox(extracurricularField).getValue();
+            String guardianName = gNameField.getText().toUpperCase();
+            String relation = (String) UIControlUtils.HBoxToComboBox(relationField).getValue();
+            String guardianCnic = gCnicField.getText();
+            String occupation = (String) UIControlUtils.HBoxToComboBox(occupationField).getValue();
+            String contact = gContactField.getText();
 
-
-            Student student = new Student();
+            Student updatedStudent = new Student();
+            updatedStudent.setStudentDetails1(null,null,null,null,null,null,email,extracurricular,guardianName,relation,guardianCnic,occupation,contact, String.valueOf(jobType));
 
             updateStudentStage1.close();
             UpdateStudentPage2 updateStudentPage2 = new UpdateStudentPage2();
-            updateStudentPage2.showUpdateStudentPage2(studentManagementStage, updateStudentStage1, student);
+            updateStudentPage2.showUpdateStudentPage2(studentManagementStage, updateStudentStage1, studentIdField.getText() , updatedStudent);
         });
 
         rightPane.getChildren().addAll(studentIdField,searchBtn);
