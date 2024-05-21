@@ -11,19 +11,19 @@ public class UpdateDataInMySQL {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
 
-    public static void updateStudentInfo(Student student) {
+    public static void updateStudentInfo(Student updatedStudent) {
         String sql = "UPDATE Student SET classGrade=?, section=?, password=?, monthlyFee=?, scholarshipStatus=?, documentStatus=?, documentRequired=? WHERE studentId=?";
 
         try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
              PreparedStatement statement = conn.prepareStatement(sql)) {
-            statement.setString(1, student.getClassGrade());
-            statement.setString(2, student.getSection());
-            statement.setString(3, student.getPassword());
-            statement.setDouble(4, student.getMonthlyFee());
-            statement.setString(5, student.getScholarshipStatus());
-            statement.setString(6, student.getDocumentStatus());
-            statement.setString(7, student.getDocumentRequired());
-            statement.setInt(8, student.getStudentId());
+            statement.setString(1, updatedStudent.getClassGrade());
+            statement.setString(2, updatedStudent.getSection());
+            statement.setString(3, updatedStudent.getPassword());
+            statement.setDouble(4, updatedStudent.getMonthlyFee());
+            statement.setString(5, updatedStudent.getScholarshipStatus());
+            statement.setString(6, updatedStudent.getDocumentStatus());
+            statement.setString(7, updatedStudent.getDocumentRequired());
+            statement.setInt(8, updatedStudent.getStudentId());
 
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
