@@ -31,7 +31,7 @@ public class LoginPage {
         // Create username field, password field, and error label
         TextField usernameField = Utility.createTextField("Username", 220, 200);
         PasswordField passwordField = Utility.createPasswordField("Password", 220, 300);
-        Label errorLabel = Utility.createTextLabel("", 18, 220, 350);
+        Label errorLabel = Utility.createTextLabel("", 22, 220, 350);
         errorLabel.setStyle("-fx-text-fill: red;");
 
 
@@ -42,7 +42,7 @@ public class LoginPage {
             String password = passwordField.getText();
             System.out.println("Login Button Clicked!");
 
-            if (Objects.equals(username, "") && Objects.equals(password, "")) {
+            if (Objects.equals(username, "admin") && Objects.equals(password, "admin123")) {
                 errorLabel.setText("");
                 System.out.println("Login Successful");
                 AdminMenu adminMenu = new AdminMenu();
