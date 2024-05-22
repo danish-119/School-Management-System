@@ -35,6 +35,7 @@ public class UpdateStudentPage1 {
         TextField gContactField = Utility.createTextField("Contact", 80, 690);
         Label jobType = Utility.createTextLabel("Job Type", 16, 525, 690);
         List<String> jobTypeOptions = List.of("Governmental", "Private");
+        HBox jobTypeField = Utility.createRadioButtonSelect(jobTypeOptions, 430, 720);
 
 
         TextField studentIdField = Utility.createTextField("Enter Student ID", 80, 30);
@@ -50,25 +51,16 @@ public class UpdateStudentPage1 {
             // Call a method to fetch student information by ID from the database
             Student student = GetDataByIdFromMySQL.getStudentById(studentId);
             if (student != null) {
-                // Display student information for removal
-
                 Label heading1 = Utility.createTextLabel("Student Information:", 30, 80, 90);
-//                Label sNameLabel = Utility.createTextLabel("Student Name:", 18, 80, 140);
-//                Label sNameField = Utility.createTextLabel(student.getStudentName(), 18, 230, 140); // Field replaced by a label
-//                HBox dobField = Utility.createDateField("Date of Birth", 430, 140);
-//                Label fNameLabel = Utility.createTextLabel("Father's Name:", 16, 80, 210);
-//                Label fNameField = Utility.createTextLabel("", 18, 230, 210); // Field replaced by a label
-//                List<String> genderOptions = List.of("Gender", "Male", "Female", "Other");
-//                HBox genderField = Utility.createSelect(genderOptions, 230, 45, 430, 210);
-//                Label sCnicLabel = Utility.createTextLabel("CNIC/B-Form Number:", 18, 80, 280);
-//                Label sCnicField = Utility.createTextLabel(student.getCnicOrBForm(), 18, 230, 280); // Field replaced by a label
-//                List<String> bloodGroupOptions = List.of("Blood Group", "A", "B", "AB", "O", "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-");
-//                Label bloodGroupLabel = Utility.createTextLabel("Blood Group:", 16, 80, 350);
-//                Label bloodGroupField = Utility.createTextLabel(student.getBloodGroup(), 18, 230, 350); // Field replaced by a label
+                Label sNameLabel = Utility.createTextLabel("Student Name: " + student.getStudentName(),22,80,150);
+                Label dobField = Utility.createTextLabel("Date of Birth: " + student.getDob(),22, 80, 200);
+
+                Label sCnicLabel = Utility.createTextLabel("CNIC/B-Form Number:" + student.getCnicOrBForm(), 22, 80, 250);
+                Label genderLabel = Utility.createTextLabel("Gender: " + student.getGender(), 22, 80,300);
+                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + student.getBloodGroup(), 22, 80, 350);
                 emailField.setText(student.getEmail());
 
                 UIControlUtils.HBoxToComboBox(extracurricularField).setValue(student.getExtracurricularInterest());
-                // ----------------------------------------------------
 
                 gNameField.setText(student.getGuardianName());
 
@@ -80,7 +72,6 @@ public class UpdateStudentPage1 {
 
                 gContactField.setText(student.getGuardianContact());
 
-                HBox jobTypeField = Utility.createRadioButtonSelect(jobTypeOptions, 430, 720);
                 for (Node node : jobTypeField.getChildren()) {
                     if (node instanceof RadioButton) {
                         RadioButton radioButton = (RadioButton) node;
@@ -92,10 +83,8 @@ public class UpdateStudentPage1 {
                 }
 
                 rightPane.getChildren().addAll(
-                        heading1, /*sNameLabel, sNameField, fNameLabel, fNameField, dobField, sCnicLabel, sCnicField, bloodGroupLabel, bloodGroupField,
-                        genderField,*/ emailField, extracurricularField, heading2, gNameField,
-                        relationField, gCnicField, occupationField, gContactField, jobType, jobTypeField
-                );
+                        heading1, sNameLabel, dobField, sCnicLabel, bloodGroupLabel,genderLabel, emailField, extracurricularField, heading2, gNameField,
+                        relationField, gCnicField, occupationField, gContactField, jobType, jobTypeField);
             } else {
                 Label errorLabel = Utility.createTextLabel("Student not Found!",30,100,330);
                 rightPane.getChildren().add(errorLabel);
@@ -120,9 +109,10 @@ public class UpdateStudentPage1 {
             String guardianCnic = gCnicField.getText();
             String occupation = (String) UIControlUtils.HBoxToComboBox(occupationField).getValue();
             String contact = gContactField.getText();
+            String jobTypeSelected = UIControlUtils.extractSelectedRadioButtonText(jobTypeField);
 
             Student updatedStudent = new Student();
-            updatedStudent.setStudentDetails1(null,null,null,null,null,null,email,extracurricular,guardianName,relation,guardianCnic,occupation,contact, String.valueOf(jobType));
+            updatedStudent.setStudentDetails1(null,null,null,null,null,null,email,extracurricular,guardianName,relation,guardianCnic,occupation,contact, jobTypeSelected);
 
             updateStudentStage1.close();
             UpdateStudentPage2 updateStudentPage2 = new UpdateStudentPage2();
@@ -130,7 +120,7 @@ public class UpdateStudentPage1 {
         });
 
         rightPane.getChildren().addAll(studentIdField,searchBtn);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 100, 530), backBtn,updateBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 80, 530), backBtn,updateBtn);
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
