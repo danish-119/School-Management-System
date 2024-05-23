@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a19c63a9-1e2d-4238-8794-e88960b68db5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateDataInMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateDataInMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/TeacherManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/TeacherManagementMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +140,11 @@
       <workItem from="1716276290890" duration="2397000" />
       <workItem from="1716280314849" duration="133000" />
       <workItem from="1716406581247" duration="3178000" />
-      <workItem from="1716393546961" duration="3067000" />
+      <workItem from="1716393546961" duration="3742000" />
+      <workItem from="1716398933759" duration="42000" />
+      <workItem from="1716462586321" duration="72000" />
+      <workItem from="1716463528041" duration="91000" />
+      <workItem from="1716479061998" duration="2286000" />
     </task>
     <servers />
   </component>

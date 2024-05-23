@@ -31,8 +31,8 @@ public class TeacherManagementMenu {
         updateTeacherBtn.setOnAction(event ->{
             System.out.println("Update Teacher Button Clicked!");
             teacherManagementStage.close();
-          UpdateTeacherPage updateTeacherPage1 = new UpdateTeacherPage();
-          updateTeacherPage1.showUpdateTeacherPage(teacherManagementStage);
+          UpdateTeacherPage1 updateTeacherPage1 = new UpdateTeacherPage1();
+          updateTeacherPage1.showUpdateTeacherPage1(teacherManagementStage);
         });
         Button removeTeacherBtn = Utility.createButton("Remove Teacher", 300, 50, 200, 380);
         removeTeacherBtn.setOnAction(event ->{
