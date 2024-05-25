@@ -46,4 +46,42 @@ public class UpdateDataInMySQL {
             System.out.println("Error updating student information: " + e.getMessage());
         }
     }
+
+
+    public static void updateTeacherInfo(Teacher updatedTeacher) {
+        String updateQuery = "UPDATE Teacher SET email = ?, experience = ?, experienceYears = ?, universityGraduatedFrom = ?, qualification = ?, majorSubject = ?, " +
+                "jobTitle = ?, jobType = ?, department = ?, monthlySalary = ?, bankForDirectDeposit = ?, documentRequired = ?, documentStatus = ?, " +
+                "username = ?, password = ? WHERE teacherId = ?";
+
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
+
+            preparedStatement.setString(1, updatedTeacher.getEmail());
+            preparedStatement.setString(2, updatedTeacher.getExperience());
+            preparedStatement.setString(3, updatedTeacher.getExperienceYears());
+            preparedStatement.setString(4, updatedTeacher.getUniversityGraduatedFrom());
+            preparedStatement.setString(5, updatedTeacher.getQualification());
+            preparedStatement.setString(6, updatedTeacher.getMajorSubject());
+            preparedStatement.setString(7, updatedTeacher.getJobTitle());
+            preparedStatement.setString(8, updatedTeacher.getJobType());
+            preparedStatement.setString(9, updatedTeacher.getDepartment());
+            preparedStatement.setDouble(10, updatedTeacher.getMonthlySalary());
+            preparedStatement.setString(11, updatedTeacher.getBankForDirectDeposit());
+            preparedStatement.setString(12, updatedTeacher.getDocumentRequired());
+            preparedStatement.setString(13, updatedTeacher.getDocumentStatus());
+            preparedStatement.setString(14, updatedTeacher.getUsername());
+            preparedStatement.setString(15, updatedTeacher.getPassword());
+            preparedStatement.setInt(16, updatedTeacher.getTeacherId());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Teacher information updated successfully.");
+            } else {
+                System.out.println("Failed to update teacher information.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
