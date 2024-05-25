@@ -78,7 +78,7 @@ public class UpdateStudentPage2 {
         });
 
         rightPane.getChildren().addAll(heading1,admissionNumberLabel,classGradeField,sectionField,usernameLabel,passwordField, heading2,monthlyFeeField,scholarshipStatusField,documentStatusField, documentField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 100, 530), backBtn,updateBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 100, 530), backBtn,updateBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

@@ -91,8 +91,7 @@ public class AddStudentPage1 {
                 relationField, gCnicField, occupationField, gContactField, jobType, jobTypeField
         );
         leftPane.getChildren().addAll(
-                Utility.createTextLabel("Add New Student", 30, 140, 530), backBtn,
-                nextBtn);
+                Utility.createTextLabel("Add New Student", 30, 140, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStudent.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

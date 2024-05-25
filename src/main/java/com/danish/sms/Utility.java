@@ -8,10 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.Objects;
@@ -52,7 +49,7 @@ public class Utility {
     }
 
     // Method to create a text label
-    public static Label createTextLabel(String text,int fontSize, int layoutX, int layoutY) {
+    public static Label createTextLabel(String text, int fontSize, int layoutX, int layoutY) {
         Label textLabel = new Label(text);
         textLabel.setStyle("-fx-font-family: 'Roboto'; -fx-font-size:" + fontSize + "px; -fx-text-fill: #555555; -fx-font-weight: bold;");
         textLabel.setLayoutX(layoutX);
@@ -106,7 +103,7 @@ public class Utility {
     }
 
     // Static method to create Gender selection field with a list of options
-    public static HBox createSelect(List<String> options,int width,int height, int layoutX, int layoutY) {
+    public static HBox createSelect(List<String> options, int width, int height, int layoutX, int layoutY) {
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getItems().addAll(options);
         comboBox.setValue(options.getFirst());
@@ -153,13 +150,23 @@ public class Utility {
         return password.toString();
     }
 
-    //  Method to create the user image
-    public static ImageView createImage(String imgPath){
-        ImageView userImage = new ImageView(new Image(imgPath));
-        userImage.setFitWidth(350);
-        userImage.setFitHeight(350);
-        userImage.setLayoutX(75);
-        userImage.setLayoutY(180);
-        return userImage;
+    //  Method to create image
+    public static ImageView displayImage(String imagePath, double layoutX, double layoutY) {
+        Image image = null;
+        try {
+            FileInputStream inputStream = new FileInputStream(imagePath);
+            image = new Image(inputStream);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(300);
+        imageView.setPreserveRatio(true);
+        imageView.setLayoutX(layoutX);
+        imageView.setLayoutY(layoutY);
+
+        return  imageView;
     }
+
 }

@@ -115,7 +115,7 @@ public class UpdateStudentPage1 {
         });
 
         rightPane.getChildren().addAll(studentIdField,searchBtn);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 80, 530), backBtn,updateBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 80, 530), backBtn,updateBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
