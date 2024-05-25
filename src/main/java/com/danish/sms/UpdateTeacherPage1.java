@@ -59,36 +59,9 @@ public class UpdateTeacherPage1 {
                 emailField.setText(teacher.getEmail());
                 experienceField.setText(teacher.getExperience());
                 experienceYearField.setText(teacher.getExperienceYears());
-
-                for (Node node : graduatedFromField.getChildren()) {
-                    if (node instanceof RadioButton) {
-                        RadioButton radioButton = (RadioButton) node;
-                        if (radioButton.getText().equalsIgnoreCase(teacher.getUniversityGraduatedFrom())) {
-                            radioButton.setSelected(true);
-                            break;
-                        }
-                    }
-                }
-
-                for (Node node : qualificationField.getChildren()) {
-                    if (node instanceof RadioButton) {
-                        RadioButton radioButton = (RadioButton) node;
-                        if (radioButton.getText().equalsIgnoreCase(teacher.getQualification())) {
-                            radioButton.setSelected(true);
-                            break;
-                        }
-                    }
-                }
-
-                for (Node node : subjectField.getChildren()) {
-                    if (node instanceof RadioButton) {
-                        RadioButton radioButton = (RadioButton) node;
-                        if (radioButton.getText().equalsIgnoreCase(teacher.getMajorSubject())) {
-                            radioButton.setSelected(true);
-                            break;
-                        }
-                    }
-                }
+                UIControlUtils.HBoxToComboBox(graduatedFromField).setValue(teacher.getUniversityGraduatedFrom());
+                UIControlUtils.HBoxToComboBox(qualificationField).setValue(teacher.getQualification());
+                UIControlUtils.HBoxToComboBox(subjectField).setValue(teacher.getMajorSubject());
 
                 rightPane.getChildren().addAll(heading1, nameLabel, dobLabel, genderLabel, cnicLabel, bloodGroupLabel, emailField, heading2, experienceField, experienceYearField, graduatedFromField, qualificationField, subjectField);
             } else {
