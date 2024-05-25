@@ -46,7 +46,7 @@ public class LoginPage {
                 errorLabel.setText("");
                 System.out.println("Login Successful");
                 AdminMenu adminMenu = new AdminMenu();
-                adminMenu.showAdminMenu(loginStage);
+                adminMenu.showAdminMenu(landingPageStage);
                 loginStage.close();
             } else {
                 errorLabel.setText("Incorrect username or password");
