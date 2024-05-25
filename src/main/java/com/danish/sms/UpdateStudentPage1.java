@@ -61,15 +61,10 @@ public class UpdateStudentPage1 {
                 emailField.setText(student.getEmail());
 
                 UIControlUtils.HBoxToComboBox(extracurricularField).setValue(student.getExtracurricularInterest());
-
                 gNameField.setText(student.getGuardianName());
-
                 UIControlUtils.HBoxToComboBox(relationField).setValue(student.getGuardianRelation());
-
                 gCnicField.setText(student.getGuardianCnic());
-
                 UIControlUtils.HBoxToComboBox(occupationField).setValue(student.getGuardianOccupation());
-
                 gContactField.setText(student.getGuardianContact());
 
                 for (Node node : jobTypeField.getChildren()) {
