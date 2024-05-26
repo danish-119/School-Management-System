@@ -10,10 +10,13 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/SaveDataToMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/SaveDataToMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Login Icon - Line Icons - Iconscout - Login Icon Images Png Clipart (#2837538) - PikPng.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/danish/sms/smsIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/danish/sms/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AdminMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +159,7 @@
       <workItem from="1716667764562" duration="9430000" />
       <workItem from="1716702162572" duration="6238000" />
       <workItem from="1716714499928" duration="8482000" />
-      <workItem from="1716723776742" duration="549000" />
+      <workItem from="1716723776742" duration="3105000" />
     </task>
     <servers />
   </component>

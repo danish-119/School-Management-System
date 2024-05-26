@@ -58,7 +58,7 @@ public class StudentManagementMenu {
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Manage Students",30, "bold" ,140, 530), backBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/student.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Manage Students",30, "bold" ,115, 530), backBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/student.png", 125,220));
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(addStudentBtn, updateStudentBtn, removeStudentBtn, displayAllStudentBtn);
 

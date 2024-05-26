@@ -43,7 +43,6 @@ public class AddTeacherPage2 {
         List<String> bankOptions = List.of("Select Bank for Direct Deposit ", "Allied Bank Limited", "Askari Bank Limited", "Bank Alfalah Limited", "Bank Al-Habib Limited", "Faysal Bank Limited", "Habib Bank Limited (HBL)", "MCB Bank Limited", "Meezan Bank Limited", "National Bank of Pakistan (NBP)", "United Bank Limited (UBL)");
         HBox bankField = Utility.createSelect(bankOptions,230,50,430,360);
         TextField documentField = Utility.createTextField("Document Required", 100, 430);
-        documentField.setText("1. B-Form (Issued by NADRA) 2. Previous Class Certificate 3. Application Form 4. Passport-sized Photographs");
         List<String> documentStatusOptions = List.of("Document Status", "Pending", "Approved", "Under Review", "Processing","Archived", "On Hold");
         HBox documentStatusField = Utility.createSelect(documentStatusOptions, 230, 50, 430, 430);
 
@@ -87,7 +86,7 @@ public class AddTeacherPage2 {
 
 
         rightPane.getChildren().addAll(heading1,jobTitleField, jobTypeField,departmentField, usernameField,passwordField,heading2,monthlySalaryField, bankField,documentField, documentStatusField, errorLabel);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, "bold" ,140, 530), backBtn,saveBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, "bold" ,120, 530), backBtn,saveBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

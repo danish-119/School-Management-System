@@ -86,7 +86,7 @@ public class AddStudentPage2 {
         });
 
         rightPane.getChildren().addAll(heading1,admissionNumberField,classGradeField,sectionField,usernameField,passwordField, heading2,monthlyFeeField,scholarshipStatusField,documentStatusField, documentField, errorLabel);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Student", 30, "bold" ,140, 530), backBtn,saveBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStudent.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Student", 30, "bold" ,115, 530), backBtn,saveBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStudent.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

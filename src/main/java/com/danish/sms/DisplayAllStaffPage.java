@@ -138,7 +138,7 @@ public class DisplayAllStaffPage {
         rightPane.getChildren().add(staffTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Staff Info", 30, "bold" ,140, 530), backBtn, employerIdField, searchBtn,infoOnScreenField,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/allPerson.png", 65,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Staff Info", 30, "bold" ,130, 530), backBtn, employerIdField, searchBtn,infoOnScreenField,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/people.png", 75,230));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
