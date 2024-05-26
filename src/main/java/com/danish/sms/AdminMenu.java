@@ -58,7 +58,7 @@ public class AdminMenu {
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome Admin!",30, "bold" ,120, 530), logoutBtn ,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/admin.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome Admin!",30, "bold" ,120, 530), logoutBtn ,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/admin3.png", 120,220));
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(manageStudentBtn, manageTeacherBtn, manageStaffBtn,financialAnalysisBtn);
 

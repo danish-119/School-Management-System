@@ -72,7 +72,7 @@ public class AddStaffPage {
 
 
         rightPane.getChildren().addAll(heading1, sNameField, dobField, cnicField, genderField, gContactField, qualificationField, heading2, monthlySalaryField, jobTitleField, jobTypeField, workScheduleField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Staff", 30, "bold" ,130, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Staff", 30, "bold" ,130, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/add.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
