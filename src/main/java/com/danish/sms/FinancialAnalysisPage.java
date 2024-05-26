@@ -84,7 +84,7 @@ public class FinancialAnalysisPage {
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Financial Analysis!", 30, "bold" ,110, 530), backBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Financial Analysis!", 30, "bold" ,110, 530), backBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/data.png", 120,220));
 
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(studentInfoLabel,totalStudentsLabel,totalFeeRevenueLabel, teacherInfoLabel,totalTeachersLabel,totalTeacherExpenseLabel, staffInfoLabel, totalStaffLabel,totalStaffExpenseLabel, OverallAnalysisLabel,totalExpenseLabel,totalRevenueLabel,differenceLabel, finalStatement);
