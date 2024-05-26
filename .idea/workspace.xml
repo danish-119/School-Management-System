@@ -11,13 +11,19 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AdminMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/FinancialAnalysisPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/FinancialAnalysisPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/LandingPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStaffPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveTeacherPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveTeacherPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/StaffManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/StaffManagementMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/TeacherManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/TeacherManagementMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage1.java" afterDir="false" />
@@ -161,7 +167,8 @@
       <workItem from="1716479061998" duration="3521000" />
       <workItem from="1716611454792" duration="1790000" />
       <workItem from="1716619922854" duration="1250000" />
-      <workItem from="1716667764562" duration="9026000" />
+      <workItem from="1716667764562" duration="9430000" />
+      <workItem from="1716702162572" duration="2700000" />
     </task>
     <servers />
   </component>

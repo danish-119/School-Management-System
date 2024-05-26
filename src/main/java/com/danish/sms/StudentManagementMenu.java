@@ -58,7 +58,7 @@ public class StudentManagementMenu {
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Manage Students",30, 140, 530), backBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Manage Students",30, "bold" ,140, 530), backBtn);
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(addStudentBtn, updateStudentBtn, removeStudentBtn, displayAllStudentBtn);
 

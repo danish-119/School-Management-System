@@ -29,7 +29,7 @@ public class UpdateTeacherPage1 {
         Button searchBtn = Utility.createButton("Search", 100, 50, 400, 30);
 
         TextField emailField = Utility.createTextField("abc123@example.com", 80, 400);
-        Label heading2 = Utility.createTextLabel("Professional Information:", 30, 80, 480);
+        Label heading2 = Utility.createTextLabel("Professional Information:", 30, "bold" ,80, 480);
         TextField experienceField = Utility.createTextField("Experience", 80, 550);
         TextField experienceYearField = Utility.createTextField("Experience Years", 430, 550);
         experienceYearField.setPrefWidth(230);
@@ -49,12 +49,12 @@ public class UpdateTeacherPage1 {
             Teacher teacher = GetDataByIdFromMySQL.getTeacherById(teacherId);
 
             if (teacher != null) {
-                Label heading1 = Utility.createTextLabel("Personal Information:", 30, 80, 90);
-                Label nameLabel = Utility.createTextLabel("Teacher Name: " + teacher.getTeacherName(), 22, 80, 150);
-                Label dobLabel = Utility.createTextLabel("Date of Birth: " + teacher.getDob(), 22, 80, 200);
-                Label genderLabel = Utility.createTextLabel("Gender: " + teacher.getGender(), 22, 80, 250);
-                Label cnicLabel = Utility.createTextLabel("CNIC Number: " + teacher.getCnic(), 22, 80, 300);
-                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + teacher.getBloodGroup(), 22, 80, 350);
+                Label heading1 = Utility.createTextLabel("Personal Information:", 30, "bold" ,80, 90);
+                Label nameLabel = Utility.createTextLabel("Teacher Name: " + teacher.getTeacherName(), 22, "bold" ,80, 150);
+                Label dobLabel = Utility.createTextLabel("Date of Birth: " + teacher.getDob(), 22, "bold" ,80, 200);
+                Label genderLabel = Utility.createTextLabel("Gender: " + teacher.getGender(), 22, "bold" ,80, 250);
+                Label cnicLabel = Utility.createTextLabel("CNIC Number: " + teacher.getCnic(), 22, "bold" ,80, 300);
+                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + teacher.getBloodGroup(), 22, "bold" ,80, 350);
 
                 emailField.setText(teacher.getEmail());
                 experienceField.setText(teacher.getExperience());
@@ -65,7 +65,7 @@ public class UpdateTeacherPage1 {
 
                 rightPane.getChildren().addAll(heading1, nameLabel, dobLabel, genderLabel, cnicLabel, bloodGroupLabel, emailField, heading2, experienceField, experienceYearField, graduatedFromField, qualificationField, subjectField);
             } else {
-                Label errorLabel = Utility.createTextLabel("Teacher not Found!", 30, 100, 330);
+                Label errorLabel = Utility.createTextLabel("Teacher not Found!", 30, "bold" ,100, 330);
                 rightPane.getChildren().add(errorLabel);
             }
         });
@@ -97,7 +97,7 @@ public class UpdateTeacherPage1 {
         });
 
         rightPane.getChildren().addAll(teacherIdField, searchBtn);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Teacher Info", 30, 90, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Teacher Info", 30, "bold" ,90, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

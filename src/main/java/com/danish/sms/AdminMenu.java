@@ -58,7 +58,7 @@ public class AdminMenu {
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome Admin!",30, 140, 530), logoutBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome Admin!",30, "bold" ,140, 530), logoutBtn);
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(manageStudentBtn, manageTeacherBtn, manageStaffBtn,financialAnalysisBtn);
 

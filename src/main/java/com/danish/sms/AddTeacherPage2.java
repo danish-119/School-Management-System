@@ -24,7 +24,7 @@ public class AddTeacherPage2 {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        Label heading1 = Utility.createTextLabel("Employment Information:", 30, 100, 50);
+        Label heading1 = Utility.createTextLabel("Employment Information:", 30, "bold" ,100, 50);
         List<String> jobTitleOptions = List.of("Job Title", "Professor", "Assistant Professor", "Associate Professor", "Lab Attendant","Lecturer", "Researcher", "Adjunct Professor" );
         HBox jobTitleField = Utility.createSelect(jobTitleOptions, 300, 50, 100, 100);
         List<String> jobTypeOptions = List.of("Job Type", "Full-Time", "Part-Time", "Contract", "Internship");
@@ -37,7 +37,7 @@ public class AddTeacherPage2 {
         HBox departmentField = Utility.createSelect(departmentOptions, 300, 50, 100, 240);
 
 
-        Label heading2 = Utility.createTextLabel("Other Information:", 30, 100, 310);
+        Label heading2 = Utility.createTextLabel("Other Information:", 30, "bold" ,100, 310);
         TextField monthlySalaryField = Utility.createTextField("Monthly Salary", 100, 360);
         List<String> bankOptions = List.of("Select Bank for Direct Deposit ", "Allied Bank Limited", "Askari Bank Limited", "Bank Alfalah Limited", "Bank Al-Habib Limited", "Faysal Bank Limited", "Habib Bank Limited (HBL)", "MCB Bank Limited", "Meezan Bank Limited", "National Bank of Pakistan (NBP)", "United Bank Limited (UBL)");
         HBox bankField = Utility.createSelect(bankOptions,230,50,430,360);
@@ -77,7 +77,7 @@ public class AddTeacherPage2 {
 
 
         rightPane.getChildren().addAll(heading1,jobTitleField, jobTypeField,departmentField, usernameField,passwordField,heading2,monthlySalaryField, bankField,documentField, documentStatusField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, 140, 530), backBtn,saveBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, "bold" ,140, 530), backBtn,saveBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

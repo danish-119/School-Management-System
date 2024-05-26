@@ -23,7 +23,7 @@ public class AddTeacherPage1 {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        Label heading1 = Utility.createTextLabel("Personal Information:", 30, 100, 50);
+        Label heading1 = Utility.createTextLabel("Personal Information:", 30, "bold" ,100, 50);
         TextField sNameField = Utility.createTextField("Teacher Name", 100, 100);
         HBox dobField = Utility.createDateField("Date of Birth", 430, 100);
         TextField fNameField = Utility.createTextField("Father's Name", 100, 170);
@@ -34,7 +34,7 @@ public class AddTeacherPage1 {
         HBox bloodGroupField = Utility.createSelect(bloodGroupOptions, 230, 45, 430, 240);
         TextField emailField = Utility.createTextField("abc123@example.com", 100, 310);
 
-        Label heading2 = Utility.createTextLabel("Professional Information:", 30, 100, 380);
+        Label heading2 = Utility.createTextLabel("Professional Information:", 30, "bold" ,100, 380);
         TextField experienceField = Utility.createTextField("Experience", 100, 450);
         TextField experienceYearField = Utility.createTextField("Experience Years", 430, 450);
         experienceYearField.setPrefWidth(230);
@@ -81,7 +81,7 @@ public class AddTeacherPage1 {
 
 
         rightPane.getChildren().addAll(heading1, sNameField, fNameField, dobField, sCnicField, bloodGroupField, genderField, emailField, heading2, qualificationField, subjectField, experienceField, experienceYearField, graduatedFromField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, 140, 530), backBtn,nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, "bold" ,140, 530), backBtn,nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

@@ -51,7 +51,7 @@ public class StaffManagementMenu {
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Manage Staff",30, 140, 530), backBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Manage Staff",30, "bold" ,140, 530), backBtn);
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(addStaffBtn, removeStaffBtn, displayAllStaffBtn);
 

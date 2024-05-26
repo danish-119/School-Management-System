@@ -21,7 +21,7 @@ public class AddStudentPage1 {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        Label heading1 = Utility.createTextLabel("Student Information:", 30, 100, 50);
+        Label heading1 = Utility.createTextLabel("Student Information:", 30, "bold" ,100, 50);
         TextField sNameField = Utility.createTextField("Student Name", 100, 100);
         HBox dobField = Utility.createDateField("Date of Birth", 430, 100);
         TextField fNameField = Utility.createTextField("Father's Name", 100, 170);
@@ -34,7 +34,7 @@ public class AddStudentPage1 {
         List<String> extracurricularOptions = List.of("Select Interest", "Sports", "Music", "Art", "Coding", "Writing", "Cooking", "Other");
         HBox extracurricularField = Utility.createSelect(extracurricularOptions, 230, 45, 430, 310);
 
-        Label heading2 = Utility.createTextLabel("Parent/Guardian Information:", 30, 100, 380);
+        Label heading2 = Utility.createTextLabel("Parent/Guardian Information:", 30, "bold" ,100, 380);
         TextField gNameField = Utility.createTextField("Father's/Guardian Name", 100, 450);
         List<String> relationOptions = List.of("Relation", "Parent", "Guardian", "Sibling", "Relative", "Other");
         HBox relationField = Utility.createSelect(relationOptions, 230, 45, 430, 450);
@@ -43,7 +43,7 @@ public class AddStudentPage1 {
         HBox occupationField = Utility.createSelect(occupationOptions, 230, 45, 430, 520);
         TextField gContactField = Utility.createTextField("Contact", 100, 580);
 
-        Label jobType = Utility.createTextLabel("Job Type", 16, 525, 580);
+        Label jobType = Utility.createTextLabel("Job Type", 16, "bold" ,525, 580);
         List<String> jobTypeOptions = List.of("Governmental", "Private");
         HBox jobTypeField = Utility.createRadioButtonSelect(jobTypeOptions, 430, 610);
 
@@ -91,7 +91,7 @@ public class AddStudentPage1 {
                 relationField, gCnicField, occupationField, gContactField, jobType, jobTypeField
         );
         leftPane.getChildren().addAll(
-                Utility.createTextLabel("Add New Student", 30, 140, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStudent.png", 120,220));
+                Utility.createTextLabel("Add New Student", 30, "bold" ,140, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStudent.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

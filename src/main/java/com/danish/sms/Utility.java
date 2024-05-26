@@ -49,9 +49,9 @@ public class Utility {
     }
 
     // Method to create a text label
-    public static Label createTextLabel(String text, int fontSize, int layoutX, int layoutY) {
+    public static Label createTextLabel(String text, int fontSize, String fontWight, int layoutX, int layoutY) {
         Label textLabel = new Label(text);
-        textLabel.setStyle("-fx-font-family: 'Roboto'; -fx-font-size:" + fontSize + "px; -fx-text-fill: #555555; -fx-font-weight: bold;");
+        textLabel.setStyle("-fx-font-family: 'Roboto'; -fx-font-size:" + fontSize + "px; -fx-text-fill: #555555; -fx-font-weight:" + fontWight +";");
         textLabel.setLayoutX(layoutX);
         textLabel.setLayoutY(layoutY);
         return textLabel;
