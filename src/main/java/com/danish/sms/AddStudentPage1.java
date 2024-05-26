@@ -1,5 +1,6 @@
 package com.danish.sms;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -73,9 +74,10 @@ public class AddStudentPage1 {
             String occupation = (String) UIControlUtils.HBoxToComboBox(occupationField).getValue();
             String contact = gContactField.getText();
             String jobTypeSelected = UIControlUtils.extractSelectedRadioButtonText(jobTypeField);
+            String username = studentName.toLowerCase().replace(" ", "") + "@school.edu.pk";
 
-            // Create a Student object and passing its method collected data
             Student student = new Student();
+            student.setUsername(username);
             student.setStudentDetails1(studentName, dob, fatherName, gender, cnic, bloodGroup, email, extracurricular, guardianName, relation, guardianCnic, occupation, contact, jobTypeSelected);
 
             // Proceed to the next page or close the stage as needed

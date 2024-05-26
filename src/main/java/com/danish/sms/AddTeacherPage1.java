@@ -69,8 +69,10 @@ public class AddTeacherPage1 {
             String university = (String) UIControlUtils.HBoxToComboBox(graduatedFromField).getValue();
             String qualification = (String) UIControlUtils.HBoxToComboBox(qualificationField).getValue();
             String subject = (String) UIControlUtils.HBoxToComboBox(subjectField).getValue();
+            String username = teacherName.toLowerCase().replace(" ", "") + "@school.edu.pk";
 
             Teacher teacher = new Teacher();
+            teacher.setUsername(username);
             teacher.setTeacherDetails1(teacherName, dob, fatherName, gender, cnic, bloodGroup, email, experience, experienceYears, university, qualification, subject);
 
             //-------------------------------

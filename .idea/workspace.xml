@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a19c63a9-1e2d-4238-8794-e88960b68db5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AdminMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/FinancialAnalysisPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/FinancialAnalysisPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/SaveDataToMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/SaveDataToMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Login Icon - Line Icons - Iconscout - Login Icon Images Png Clipart (#2837538) - PikPng.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/danish/sms/smsIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/danish/sms/user.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +71,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SaveDataToMySQL.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;mysqldb&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -148,7 +154,9 @@
       <workItem from="1716611454792" duration="1790000" />
       <workItem from="1716619922854" duration="1250000" />
       <workItem from="1716667764562" duration="9430000" />
-      <workItem from="1716702162572" duration="5968000" />
+      <workItem from="1716702162572" duration="6238000" />
+      <workItem from="1716714499928" duration="8482000" />
+      <workItem from="1716723776742" duration="549000" />
     </task>
     <servers />
   </component>
