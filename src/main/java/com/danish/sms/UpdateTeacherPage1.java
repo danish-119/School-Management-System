@@ -25,9 +25,6 @@ public class UpdateTeacherPage1 {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        TextField teacherIdField = Utility.createTextField("Enter Teacher ID", 80, 30);
-        Button searchBtn = Utility.createButton("Search", 100, 50, 400, 30);
-
         TextField emailField = Utility.createTextField("abc123@example.com", 80, 400);
         Label heading2 = Utility.createTextLabel("Professional Information:", 30, "bold" ,80, 480);
         TextField experienceField = Utility.createTextField("Experience", 80, 550);
@@ -40,6 +37,9 @@ public class UpdateTeacherPage1 {
         List<String> subjectOptions = List.of("Major Subject", "Mathematics", "Science", "English", "Urdu", "History", "Art", "Physical Education", "Computer Science", "Other");
         HBox subjectField = Utility.createSelect(subjectOptions, 230, 45, 430, 700);
 
+        TextField teacherIdField = Utility.createTextField("Enter Teacher ID", 80, 30);
+
+        Button searchBtn = Utility.createSearchButton(400, 30);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
             rightPane.getChildren().clear();
@@ -50,11 +50,11 @@ public class UpdateTeacherPage1 {
 
             if (teacher != null) {
                 Label heading1 = Utility.createTextLabel("Personal Information:", 30, "bold" ,80, 90);
-                Label nameLabel = Utility.createTextLabel("Teacher Name: " + teacher.getTeacherName(), 22, "bold" ,80, 150);
-                Label dobLabel = Utility.createTextLabel("Date of Birth: " + teacher.getDob(), 22, "bold" ,80, 200);
-                Label genderLabel = Utility.createTextLabel("Gender: " + teacher.getGender(), 22, "bold" ,80, 250);
-                Label cnicLabel = Utility.createTextLabel("CNIC Number: " + teacher.getCnic(), 22, "bold" ,80, 300);
-                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + teacher.getBloodGroup(), 22, "bold" ,80, 350);
+                Label nameLabel = Utility.createTextLabel("Teacher Name: " + teacher.getTeacherName(), 22, "normal" ,80, 150);
+                Label dobLabel = Utility.createTextLabel("Date of Birth: " + teacher.getDob(), 22, "normal" ,80, 200);
+                Label genderLabel = Utility.createTextLabel("Gender: " + teacher.getGender(), 22, "normal" ,80, 250);
+                Label cnicLabel = Utility.createTextLabel("CNIC Number: " + teacher.getCnic(), 22, "normal" ,80, 300);
+                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + teacher.getBloodGroup(), 22, "normal" ,80, 350);
 
                 emailField.setText(teacher.getEmail());
                 experienceField.setText(teacher.getExperience());
@@ -70,7 +70,7 @@ public class UpdateTeacherPage1 {
             }
         });
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             teacherManagementStage.show();

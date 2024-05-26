@@ -12,10 +12,24 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStaffPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddStudentPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/AddTeacherPage2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStaffPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllStudentsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/DisplayAllTeachersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/FinancialAnalysisPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/FinancialAnalysisPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStaffPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStaffPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveStudentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveTeacherPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/RemoveTeacherPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/StaffManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/StaffManagementMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/StudentManagementMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/TeacherManagementMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/TeacherManagementMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateStudentPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/UpdateTeacherPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danish/sms/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danish/sms/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +174,9 @@
       <workItem from="1716702162572" duration="6238000" />
       <workItem from="1716714499928" duration="8482000" />
       <workItem from="1716723776742" duration="4244000" />
-      <workItem from="1716733506761" duration="1256000" />
+      <workItem from="1716733506761" duration="2421000" />
+      <workItem from="1716736836174" duration="278000" />
+      <workItem from="1716738674198" duration="2232000" />
     </task>
     <servers />
   </component>

@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -37,7 +38,7 @@ public class DisplayAllStaffPage {
         // Load data from the database
         ObservableList<Staff> staffList = LoadDataFromMySQL.loadStaffData();
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             staffManagementStage.show();
@@ -48,7 +49,7 @@ public class DisplayAllStaffPage {
         employerIdField.setPrefWidth(155);
         employerIdField.setStyle("-fx-font-size: 14px;");
 
-        Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
+        Button searchBtn = Utility.createSearchButton(380,730);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
             String employerId = employerIdField.getText();

@@ -41,7 +41,7 @@ public class StaffManagementMenu {
             DisplayAllStaffPage displayAllStaffPage = new DisplayAllStaffPage();
             displayAllStaffPage.showDisplayAllStaffPage(staffManagementStage);
         });
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             staffManagementStage.close();

@@ -48,7 +48,7 @@ public class AddStudentPage1 {
         List<String> jobTypeOptions = List.of("Governmental", "Private");
         HBox jobTypeField = Utility.createRadioButtonSelect(jobTypeOptions, 430, 610);
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             addStudentStage1.close();

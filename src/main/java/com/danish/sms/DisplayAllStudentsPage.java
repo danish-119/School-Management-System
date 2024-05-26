@@ -35,7 +35,7 @@ public class DisplayAllStudentsPage {
         studentTable.setPrefWidth(800);
 
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             studentManagementStage.show();
@@ -46,7 +46,7 @@ public class DisplayAllStudentsPage {
         studentIdField.setPrefWidth(155);
         studentIdField.setStyle("-fx-font-size: 14px;");
 
-        Button searchBtn = Utility.createButton("Search", 100, 50, 380, 730);
+        Button searchBtn = Utility.createSearchButton(380,730);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
             String studentId = studentIdField.getText();

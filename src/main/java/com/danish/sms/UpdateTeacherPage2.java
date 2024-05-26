@@ -30,7 +30,7 @@ public class UpdateTeacherPage2 {
         List<String> jobTypeOptions = List.of("Job Type", "Full-Time", "Part-Time", "Contract", "Internship");
         HBox jobTypeField = Utility.createSelect(jobTypeOptions, 230, 50, 430, 100);
         UIControlUtils.HBoxToComboBox(jobTypeField).setValue(teacher.getJobType());
-        Label usernameLabel = Utility.createTextLabel("Username: " + teacher.getUsername() , 14, "bold" ,80, 180);
+        Label usernameLabel = Utility.createTextLabel("Username: " + teacher.getUsername() , 18, "normal" ,80, 180);
         PasswordField passwordField = Utility.createPasswordField("Password", 430, 170);
         passwordField.setPrefWidth(230);
         passwordField.setText(teacher.getPassword());
@@ -51,7 +51,7 @@ public class UpdateTeacherPage2 {
         UIControlUtils.HBoxToComboBox(documentStatusField).setValue(teacher.getDocumentStatus());
 
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             updateTeacherStage1.show();

@@ -3,6 +3,7 @@ package com.danish.sms;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -40,8 +41,7 @@ public class UpdateStudentPage1 {
 
         TextField studentIdField = Utility.createTextField("Enter Student ID", 80, 30);
 
-        Button searchBtn = Utility.createButton("Search", 100, 50, 400, 30);
-
+        Button searchBtn = Utility.createSearchButton(400, 30);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
             rightPane.getChildren().clear();
@@ -52,12 +52,12 @@ public class UpdateStudentPage1 {
             Student student = GetDataByIdFromMySQL.getStudentById(studentId);
             if (student != null) {
                 Label heading1 = Utility.createTextLabel("Student Information:", 30, "bold" ,80, 90);
-                Label sNameLabel = Utility.createTextLabel("Student Name: " + student.getStudentName(),22,"bold" ,80,150);
-                Label dobField = Utility.createTextLabel("Date of Birth: " + student.getDob(),22, "bold" ,80, 200);
+                Label sNameLabel = Utility.createTextLabel("Student Name: " + student.getStudentName(),22,"normal" ,80,150);
+                Label dobField = Utility.createTextLabel("Date of Birth: " + student.getDob(),22, "normal" ,80, 200);
 
-                Label sCnicLabel = Utility.createTextLabel("CNIC/B-Form Number:" + student.getCnicOrBForm(), 22, "bold" ,80, 250);
-                Label genderLabel = Utility.createTextLabel("Gender: " + student.getGender(), 22, "bold" ,80,300);
-                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + student.getBloodGroup(), 22, "bold" ,80, 350);
+                Label sCnicLabel = Utility.createTextLabel("CNIC/B-Form Number:" + student.getCnicOrBForm(), 22, "normal" ,80, 250);
+                Label genderLabel = Utility.createTextLabel("Gender: " + student.getGender(), 22, "normal" ,80,300);
+                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + student.getBloodGroup(), 22, "normal" ,80, 350);
                 emailField.setText(student.getEmail());
 
                 UIControlUtils.HBoxToComboBox(extracurricularField).setValue(student.getExtracurricularInterest());
@@ -85,7 +85,7 @@ public class UpdateStudentPage1 {
             }
         });
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             studentManagementStage.show();

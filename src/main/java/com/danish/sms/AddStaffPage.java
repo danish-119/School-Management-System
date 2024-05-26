@@ -40,7 +40,7 @@ public class AddStaffPage {
         List<String> workScheduleOptions = List.of("Work Schedule", "Monday-Friday", "Weekends Only", "Rotating Shifts", "Flexible Hours");
         HBox workScheduleField = Utility.createSelect(workScheduleOptions, 230, 50, 430, 450);
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             addStaffStage.close();

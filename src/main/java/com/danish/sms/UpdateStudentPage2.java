@@ -24,8 +24,8 @@ public class UpdateStudentPage2 {
         Student student = GetDataByIdFromMySQL.getStudentById(studentId);
 
         Label heading1 = Utility.createTextLabel("Academic Information:", 30, "bold" ,80, 50);
-        Label admissionNumberLabel = Utility.createTextLabel("Admission Number: " + student.getAdmissionNumber() , 20, "bold" ,80, 110);
-        Label usernameLabel = Utility.createTextLabel("Username: " + student.getUsername() , 18, "bold" ,80, 180);
+        Label admissionNumberLabel = Utility.createTextLabel("Admission Number: " + student.getAdmissionNumber() , 20, "normal" ,80, 110);
+        Label usernameLabel = Utility.createTextLabel("Username: " + student.getUsername() , 18, "normal" ,80, 180);
         PasswordField passwordField = Utility.createPasswordField("Password", 430, 170);
         passwordField.setPrefWidth(230);
         passwordField.setText(student.getPassword());
@@ -51,7 +51,7 @@ public class UpdateStudentPage2 {
         UIControlUtils.HBoxToComboBox(documentStatusField).setValue(student.getDocumentStatus());
 
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             updateStudentStage1.show();
