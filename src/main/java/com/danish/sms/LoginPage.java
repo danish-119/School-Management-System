@@ -1,10 +1,8 @@
 package com.danish.sms;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -41,6 +39,15 @@ public class LoginPage {
 
         // Create login button
         Button loginBtn = Utility.createButton("Login", 300, 50, 220, 400);
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/login.png",0,0);
+        imageView.setFitHeight(30);
+        imageView.setFitWidth(50);
+        HBox hbox = new HBox(5);
+        hbox.setAlignment(Pos.CENTER);
+        hbox.getChildren().addAll(loginBtn, imageView);
+
+        loginBtn.setGraphic(hbox);
+        loginBtn.setContentDisplay(ContentDisplay.RIGHT);
         loginBtn.setOnAction(event -> {
             String username = usernameField.getText();
             String password = passwordField.getText();

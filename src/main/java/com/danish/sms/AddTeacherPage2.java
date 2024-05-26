@@ -57,7 +57,7 @@ public class AddTeacherPage2 {
             addTeacherStage1.show();
         });
 
-        Button saveBtn = Utility.createButton("Save", 100, 50, 360, 730);
+        Button saveBtn = Utility.createSaveButton();
         saveBtn.setOnAction(event -> {
             System.out.println("Save Button Clicked!");
             // Collect data entered on this page

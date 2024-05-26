@@ -58,9 +58,9 @@ public class UpdateStudentPage2 {
             updateStudentStage2.close();
         });
 
-        Button updateBtn = Utility.createButton("Update", 120, 50, 360, 730);
-        updateBtn.setOnAction(event -> {
-            System.out.println("Update Button Clicked!");
+        Button saveBtn = Utility.createSaveButton();
+        saveBtn.setOnAction(event -> {
+            System.out.println("Save Button Clicked!");
             String classGrade = (String) UIControlUtils.HBoxToComboBox(classGradeField).getValue();
             String section = (String) UIControlUtils.HBoxToComboBox(sectionField).getValue();
             String password = passwordField.getText();
@@ -78,7 +78,7 @@ public class UpdateStudentPage2 {
         });
 
         rightPane.getChildren().addAll(heading1,admissionNumberLabel,classGradeField,sectionField,usernameLabel,passwordField, heading2,monthlyFeeField,scholarshipStatusField,documentStatusField, documentField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,100, 530), backBtn,updateBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,100, 530), backBtn,saveBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
