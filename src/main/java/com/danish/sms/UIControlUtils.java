@@ -25,7 +25,7 @@ public class UIControlUtils {
         Optional<Node> selectedNode = radioButtonContainer.getChildren().stream()
                 .filter(node -> ((RadioButton) node).isSelected())
                 .findFirst();
-        if (((Optional<?>) selectedNode).isPresent()) {
+        if (selectedNode.isPresent()) {
             return ((RadioButton) selectedNode.get()).getText();
         } else {
             throw new RuntimeException("No radio button selected");
