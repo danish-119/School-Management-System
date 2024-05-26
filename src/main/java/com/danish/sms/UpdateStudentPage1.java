@@ -25,7 +25,7 @@ public class UpdateStudentPage1 {
         TextField emailField = Utility.createTextField("abc123@example.com", 80, 400);
         List<String> extracurricularOptions = List.of("Select Interest", "Sports", "Music", "Art", "Coding", "Writing", "Cooking", "Other");
         HBox extracurricularField = Utility.createSelect(extracurricularOptions, 230, 50, 430, 400);
-        Label heading2 = Utility.createTextLabel("Parent/Guardian Information:", 30, 80, 480);
+        Label heading2 = Utility.createTextLabel("Parent/Guardian Information:", 30, "bold" ,80, 480);
         TextField gNameField = Utility.createTextField("Father's/Guardian Name", 80, 550);
         List<String> relationOptions = List.of("Relation", "Parent", "Guardian", "Sibling", "Relative", "Other");
         HBox relationField = Utility.createSelect(relationOptions, 230, 45, 430, 550);
@@ -33,7 +33,7 @@ public class UpdateStudentPage1 {
         List<String> occupationOptions = List.of("Occupation", "Doctor", "Engineer", "Teacher", "Nurse", "Artist", "Businessperson", "Homemaker", "Student", "Other");
         HBox occupationField = Utility.createSelect(occupationOptions, 230, 45, 430, 620);
         TextField gContactField = Utility.createTextField("Contact", 80, 690);
-        Label jobType = Utility.createTextLabel("Job Type", 16, 525, 690);
+        Label jobType = Utility.createTextLabel("Job Type", 16, "bold" ,525, 690);
         List<String> jobTypeOptions = List.of("Governmental", "Private");
         HBox jobTypeField = Utility.createRadioButtonSelect(jobTypeOptions, 430, 720);
 
@@ -51,13 +51,13 @@ public class UpdateStudentPage1 {
             // Call a method to fetch student information by ID from the database
             Student student = GetDataByIdFromMySQL.getStudentById(studentId);
             if (student != null) {
-                Label heading1 = Utility.createTextLabel("Student Information:", 30, 80, 90);
-                Label sNameLabel = Utility.createTextLabel("Student Name: " + student.getStudentName(),22,80,150);
-                Label dobField = Utility.createTextLabel("Date of Birth: " + student.getDob(),22, 80, 200);
+                Label heading1 = Utility.createTextLabel("Student Information:", 30, "bold" ,80, 90);
+                Label sNameLabel = Utility.createTextLabel("Student Name: " + student.getStudentName(),22,"bold" ,80,150);
+                Label dobField = Utility.createTextLabel("Date of Birth: " + student.getDob(),22, "bold" ,80, 200);
 
-                Label sCnicLabel = Utility.createTextLabel("CNIC/B-Form Number:" + student.getCnicOrBForm(), 22, 80, 250);
-                Label genderLabel = Utility.createTextLabel("Gender: " + student.getGender(), 22, 80,300);
-                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + student.getBloodGroup(), 22, 80, 350);
+                Label sCnicLabel = Utility.createTextLabel("CNIC/B-Form Number:" + student.getCnicOrBForm(), 22, "bold" ,80, 250);
+                Label genderLabel = Utility.createTextLabel("Gender: " + student.getGender(), 22, "bold" ,80,300);
+                Label bloodGroupLabel = Utility.createTextLabel("Blood Group: " + student.getBloodGroup(), 22, "bold" ,80, 350);
                 emailField.setText(student.getEmail());
 
                 UIControlUtils.HBoxToComboBox(extracurricularField).setValue(student.getExtracurricularInterest());
@@ -81,7 +81,7 @@ public class UpdateStudentPage1 {
                         heading1, sNameLabel, dobField, sCnicLabel, bloodGroupLabel,genderLabel, emailField, extracurricularField, heading2, gNameField,
                         relationField, gCnicField, occupationField, gContactField, jobType, jobTypeField);
             } else {
-                Label errorLabel = Utility.createTextLabel("Student not Found!",30,100,330);
+                Label errorLabel = Utility.createTextLabel("Student not Found!",30,"bold" ,100,330);
                 rightPane.getChildren().add(errorLabel);
             }
         });
@@ -115,7 +115,7 @@ public class UpdateStudentPage1 {
         });
 
         rightPane.getChildren().addAll(studentIdField,searchBtn);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 80, 530), backBtn,updateBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,80, 530), backBtn,updateBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

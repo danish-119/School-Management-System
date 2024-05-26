@@ -24,7 +24,7 @@ public class AddStudentPage2 {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        Label heading1 = Utility.createTextLabel("Academic Information:", 30, 100, 50);
+        Label heading1 = Utility.createTextLabel("Academic Information:", 30, "bold" ,100, 50);
         TextField admissionNumberField = Utility.createTextField("Admission Number", 100, 100);
         List<String> classGradeOptions = List.of("Class/Grade", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th");
         HBox classGradeField = Utility.createSelect(classGradeOptions, 230, 45, 430, 100);
@@ -36,7 +36,7 @@ public class AddStudentPage2 {
         HBox sectionField = Utility.createSelect(sectionOptions, 230, 45, 100, 240);
 
 
-        Label heading2 = Utility.createTextLabel("Other Information:", 30, 100, 310);
+        Label heading2 = Utility.createTextLabel("Other Information:", 30, "bold" ,100, 310);
         TextField monthlyFeeField = Utility.createTextField("Monthly Fee", 100, 350);
         List<String> scholarshipStatusOptions = List.of("Scholarship Status","Not Applied", "Pending", "Approved", "Rejected");
         HBox scholarshipStatusField = Utility.createSelect(scholarshipStatusOptions, 230, 45, 430, 350);
@@ -79,7 +79,7 @@ public class AddStudentPage2 {
         });
 
         rightPane.getChildren().addAll(heading1,admissionNumberField,classGradeField,sectionField,usernameField,passwordField, heading2,monthlyFeeField,scholarshipStatusField,documentStatusField, documentField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Student", 30, 140, 530), backBtn,saveBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Student", 30, "bold" ,140, 530), backBtn,saveBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStudent.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

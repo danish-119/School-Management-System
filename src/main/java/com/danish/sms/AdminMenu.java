@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class AdminMenu {
 
     // Method to display the admin menu scene
-    public void showAdminMenu(Stage loginStage) {
+    public void showAdminMenu(Stage landingPageStage) {
         // Create a new stage for the admin menu
         Stage adminMenuStage = new Stage();
         adminMenuStage.setFullScreen(true);
@@ -52,13 +52,13 @@ public class AdminMenu {
         logoutBtn.setOnAction(event -> {
             System.out.println("Logout Button Clicked!");
             adminMenuStage.close();
-            loginStage.show();
+            landingPageStage.show();
         });
 
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome Admin!",30, 140, 530), logoutBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Welcome Admin!",30, "bold" ,140, 530), logoutBtn);
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(manageStudentBtn, manageTeacherBtn, manageStaffBtn,financialAnalysisBtn);
 

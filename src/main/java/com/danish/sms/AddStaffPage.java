@@ -21,7 +21,7 @@ public class AddStaffPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        Label heading1 = Utility.createTextLabel("Personal Information:", 30, 100, 50);
+        Label heading1 = Utility.createTextLabel("Personal Information:", 30, "bold" ,100, 50);
         TextField sNameField = Utility.createTextField("Full Name", 100, 100);
         HBox dobField = Utility.createDateField("Date of Birth", 430, 100);
         TextField cnicField = Utility.createTextField("CNIC Number", 100, 170);
@@ -31,7 +31,7 @@ public class AddStaffPage {
         List<String> qualificationOptions = List.of("Qualification", "Primary School Certificate", "Middle School Certificate", "Matriculation", "Intermediate", "Bachelor's Degree", "Diploma/Certificate");
         HBox qualificationField = Utility.createSelect(qualificationOptions, 230, 50, 430, 240);
 
-        Label heading2 = Utility.createTextLabel("Employment Information:", 30, 100, 310);
+        Label heading2 = Utility.createTextLabel("Employment Information:", 30, "bold" ,100, 310);
         List<String> jobTitleOptions = List.of("Job Title", "Custodian", "Secretary", "Librarian", "Cafeteria Worker", "Security Officer", "Maintenance Worker", "IT Support Specialist", "Accountant");
         HBox jobTitleField = Utility.createSelect(jobTitleOptions, 300, 50, 100, 380);
         List<String> jobTypeOptions = List.of("Job Type", "Full-Time", "Part-Time", "Contract");
@@ -71,7 +71,7 @@ public class AddStaffPage {
         });
 
         rightPane.getChildren().addAll(heading1, sNameField, dobField, cnicField, genderField, gContactField, qualificationField, heading2, monthlySalaryField, jobTitleField, jobTypeField, workScheduleField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Staff", 30, 140, 530), backBtn, nextBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Staff", 30, "bold" ,130, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

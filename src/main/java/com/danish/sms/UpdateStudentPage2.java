@@ -23,9 +23,9 @@ public class UpdateStudentPage2 {
 
         Student student = GetDataByIdFromMySQL.getStudentById(studentId);
 
-        Label heading1 = Utility.createTextLabel("Academic Information:", 30, 80, 50);
-        Label admissionNumberLabel = Utility.createTextLabel("Admission Number: " + student.getAdmissionNumber() , 20, 80, 110);
-        Label usernameLabel = Utility.createTextLabel("Username: " + student.getUsername() , 18, 80, 180);
+        Label heading1 = Utility.createTextLabel("Academic Information:", 30, "bold" ,80, 50);
+        Label admissionNumberLabel = Utility.createTextLabel("Admission Number: " + student.getAdmissionNumber() , 20, "bold" ,80, 110);
+        Label usernameLabel = Utility.createTextLabel("Username: " + student.getUsername() , 18, "bold" ,80, 180);
         PasswordField passwordField = Utility.createPasswordField("Password", 430, 170);
         passwordField.setPrefWidth(230);
         passwordField.setText(student.getPassword());
@@ -37,7 +37,7 @@ public class UpdateStudentPage2 {
         UIControlUtils.HBoxToComboBox(sectionField).setValue(student.getSection());
 
 
-        Label heading2 = Utility.createTextLabel("Other Information:", 30, 80, 310);
+        Label heading2 = Utility.createTextLabel("Other Information:", 30, "bold" ,80, 310);
         TextField monthlyFeeField = Utility.createTextField("Monthly Fee", 80, 370);
         monthlyFeeField.setText(String.valueOf(student.getMonthlyFee()));
         List<String> scholarshipStatusOptions = List.of("Scholarship Status","Not Applied", "Pending", "Approved", "Rejected");
@@ -78,7 +78,7 @@ public class UpdateStudentPage2 {
         });
 
         rightPane.getChildren().addAll(heading1,admissionNumberLabel,classGradeField,sectionField,usernameLabel,passwordField, heading2,monthlyFeeField,scholarshipStatusField,documentStatusField, documentField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, 100, 530), backBtn,updateBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,100, 530), backBtn,updateBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
