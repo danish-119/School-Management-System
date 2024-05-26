@@ -180,7 +180,7 @@ public class DisplayAllTeachersPage {
         rightPane.getChildren().add(teacherTable);
 
         // Adjust layout structure
-        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, "bold" ,140, 530), backBtn, teacherIdField,searchBtn,infoOnScreenField,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/allPerson.png", 65,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("All Teachers Info", 30, "bold" ,115, 530), backBtn, teacherIdField,searchBtn,infoOnScreenField,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/allPeople.png", 110,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

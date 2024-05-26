@@ -69,8 +69,10 @@ public class AddTeacherPage1 {
             String university = (String) UIControlUtils.HBoxToComboBox(graduatedFromField).getValue();
             String qualification = (String) UIControlUtils.HBoxToComboBox(qualificationField).getValue();
             String subject = (String) UIControlUtils.HBoxToComboBox(subjectField).getValue();
+            String username = teacherName.toLowerCase().replace(" ", "") + "@school.edu.pk";
 
             Teacher teacher = new Teacher();
+            teacher.setUsername(username);
             teacher.setTeacherDetails1(teacherName, dob, fatherName, gender, cnic, bloodGroup, email, experience, experienceYears, university, qualification, subject);
 
             //-------------------------------
@@ -81,7 +83,7 @@ public class AddTeacherPage1 {
 
 
         rightPane.getChildren().addAll(heading1, sNameField, fNameField, dobField, sCnicField, bloodGroupField, genderField, emailField, heading2, qualificationField, subjectField, experienceField, experienceYearField, graduatedFromField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, "bold" ,140, 530), backBtn,nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Add New Teacher", 30, "bold" ,120, 530), backBtn,nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStaff.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

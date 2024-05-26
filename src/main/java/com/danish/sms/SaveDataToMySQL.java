@@ -1,9 +1,6 @@
 package com.danish.sms;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 
 public class SaveDataToMySQL {
@@ -11,8 +8,9 @@ public class SaveDataToMySQL {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
 
-    public static void saveStudentInfo(Student student) {
+    public static boolean saveStudentInfo(Student student) {
         try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD)) {
+
             String sql = "INSERT INTO Student (studentName, dateOfBirth, gender, cnicOrBForm, bloodGroup, email, extracurricularInterest, guardianName, guardianRelation, guardianCnic, guardianOccupation, guardianContact, jobType, admissionNumber, classGrade, section, username, password, admissionDate, monthlyFee, scholarshipStatus, documentRequired, documentStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = conn.prepareStatement(sql)) {
                 statement.setString(1, student.getStudentName());
@@ -34,7 +32,7 @@ public class SaveDataToMySQL {
                 statement.setString(17, student.getUsername());
                 statement.setString(18, student.getPassword());
                 statement.setString(19, student.getAdmissionDate());
-                statement.setDouble(20,student.getMonthlyFee());
+                statement.setDouble(20, student.getMonthlyFee());
                 statement.setString(21, student.getScholarshipStatus());
                 statement.setString(22, student.getDocumentRequired());
                 statement.setString(23, student.getDocumentStatus());
@@ -42,14 +40,17 @@ public class SaveDataToMySQL {
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
                     System.out.println("A new student was inserted successfully!");
+                    return true;
                 }
             }
         } catch (SQLException e) {
             System.out.println("Error inserting data into database: " + e.getMessage());
+            return false;
         }
+        return false;
     }
 
-    public static void saveTeacherInfo(Teacher teacher) {
+    public static boolean saveTeacherInfo(Teacher teacher) {
         try (Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD)) {
             String sql = "INSERT INTO Teacher (teacherName, dateOfBirth, gender, cnicNumber, bloodGroup, email, experience, experienceYears, universityGraduatedFrom, qualification, majorSubject, jobTitle, jobType, department, monthlySalary, bankForDirectDeposit, documentRequired, documentStatus, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -77,11 +78,14 @@ public class SaveDataToMySQL {
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
                     System.out.println("A new teacher was inserted successfully!");
+                    return true;
                 }
             }
         } catch (SQLException e) {
             System.out.println("Error inserting data into database: " + e.getMessage());
+            return false;
         }
+        return false;
     }
 
     public  static void saveStaffInfo(Staff staff) {

@@ -68,8 +68,7 @@ public class UpdateStudentPage1 {
                 gContactField.setText(student.getGuardianContact());
 
                 for (Node node : jobTypeField.getChildren()) {
-                    if (node instanceof RadioButton) {
-                        RadioButton radioButton = (RadioButton) node;
+                    if (node instanceof RadioButton radioButton) {
                         if (radioButton.getText().equalsIgnoreCase(student.getJobType())) {
                             radioButton.setSelected(true);
                             break;

@@ -1,5 +1,6 @@
 package com.danish.sms;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -73,9 +74,10 @@ public class AddStudentPage1 {
             String occupation = (String) UIControlUtils.HBoxToComboBox(occupationField).getValue();
             String contact = gContactField.getText();
             String jobTypeSelected = UIControlUtils.extractSelectedRadioButtonText(jobTypeField);
+            String username = studentName.toLowerCase().replace(" ", "") + "@school.edu.pk";
 
-            // Create a Student object and passing its method collected data
             Student student = new Student();
+            student.setUsername(username);
             student.setStudentDetails1(studentName, dob, fatherName, gender, cnic, bloodGroup, email, extracurricular, guardianName, relation, guardianCnic, occupation, contact, jobTypeSelected);
 
             // Proceed to the next page or close the stage as needed
@@ -91,7 +93,7 @@ public class AddStudentPage1 {
                 relationField, gCnicField, occupationField, gContactField, jobType, jobTypeField
         );
         leftPane.getChildren().addAll(
-                Utility.createTextLabel("Add New Student", 30, "bold" ,140, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/addStudent.png", 120,220));
+                Utility.createTextLabel("Add New Student", 30, "bold" ,115, 530), backBtn, nextBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/add.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

@@ -56,17 +56,17 @@ public class FinancialAnalysisPage {
         Label totalStaffLabel = Utility.createTextLabel("Total Staff: " + staff.size(), 22, "normal" ,80, 400);
         Label totalStaffExpenseLabel = Utility.createTextLabel("Staff Expenses: " + totalStaffExpense + " PKR", 22, "normal" ,80, 450);
         Label OverallAnalysisLabel = Utility.createTextLabel("Overall Analysis", 30, "bold", 80, 500);
-        Label totalExpenseLabel = Utility.createTextLabel("Total Expenses: " + (totalStaffExpense + totalTeacherExpense), 22, "normal" ,80, 550);
+        Label totalExpenseLabel = Utility.createTextLabel("Total Expenses: " + (totalStaffExpense + totalTeacherExpense)  + " PKR", 22, "normal" ,80, 550);
         Label totalRevenueLabel = Utility.createTextLabel("Total Revenue: " + totalFeeRevenue + " PKR", 22, "normal" ,80, 600);
         Label differenceLabel = Utility.createTextLabel("", 22, "normal" ,80, 650);
         Label finalStatement = Utility.createTextLabel("", 18, "normal", 300,700);
         if((totalStaffExpense + totalTeacherExpense) < totalFeeRevenue) {
-            differenceLabel.setText("Profit: " + (totalFeeRevenue - totalStaffExpense + totalTeacherExpense ));
+            differenceLabel.setText("Profit: " + (totalFeeRevenue - totalStaffExpense + totalTeacherExpense ) + " PKR");
             finalStatement.setText("You're in Profit");
             finalStatement.setStyle("-fx-text-fill: #29e429; -fx-font-size: 20;");
         }
         else{
-            differenceLabel.setText("Loss: " + (totalStaffExpense + totalTeacherExpense  - totalFeeRevenue));
+            differenceLabel.setText("Loss: " + (totalStaffExpense + totalTeacherExpense  - totalFeeRevenue) + " PKR");
             finalStatement.setText("You're in Loss");
             finalStatement.setStyle("-fx-text-fill: #f42727; -fx-font-size: 20;");
         }
@@ -84,7 +84,7 @@ public class FinancialAnalysisPage {
 
         // Create left and right panes
         Pane leftPane = Utility.createLeftPane();
-        leftPane.getChildren().addAll(Utility.createTextLabel("Financial Analysis!", 30, "bold" ,110, 530), backBtn);
+        leftPane.getChildren().addAll(Utility.createTextLabel("Financial Analysis!", 30, "bold" ,110, 530), backBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/data.png", 120,220));
 
         Pane rightPane = Utility.createRightPane();
         rightPane.getChildren().addAll(studentInfoLabel,totalStudentsLabel,totalFeeRevenueLabel, teacherInfoLabel,totalTeachersLabel,totalTeacherExpenseLabel, staffInfoLabel, totalStaffLabel,totalStaffExpenseLabel, OverallAnalysisLabel,totalExpenseLabel,totalRevenueLabel,differenceLabel, finalStatement);
