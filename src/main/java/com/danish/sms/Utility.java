@@ -67,6 +67,33 @@ public class Utility {
         return continueBtn;
     }
 
+    public static Button createSearchButton(int layoutX, int layoutY){
+        Button searchBtn = Utility.createButton("", 100, 50, layoutX, layoutY);
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/search.png",0,0);
+        imageView.setFitHeight(30);
+        imageView.setFitWidth(50);
+        searchBtn.setGraphic(imageView);
+        return searchBtn;
+    }
+
+    public static Button createBackButton(){
+        Button backBtn = Utility.createButton("", 100, 50, 20,730);
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/back.png",0,0);
+        imageView.setFitHeight(30);
+        imageView.setFitWidth(50);
+        backBtn.setGraphic(imageView);
+        return backBtn;
+    }
+
+    public static Button createSaveButton(){
+        Button saveBtn = Utility.createButton("", 100, 50, 370,730);
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/save.png",0,0);
+        imageView.setFitHeight(30);
+        imageView.setFitWidth(50);
+        saveBtn.setGraphic(imageView);
+        return saveBtn;
+    }
+
     // Method to create a text field
     public static TextField createTextField(String promptText, int layoutX, int layoutY) {
         TextField textField = new TextField();

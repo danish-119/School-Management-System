@@ -24,8 +24,8 @@ public class UpdateStudentPage2 {
         Student student = GetDataByIdFromMySQL.getStudentById(studentId);
 
         Label heading1 = Utility.createTextLabel("Academic Information:", 30, "bold" ,80, 50);
-        Label admissionNumberLabel = Utility.createTextLabel("Admission Number: " + student.getAdmissionNumber() , 20, "bold" ,80, 110);
-        Label usernameLabel = Utility.createTextLabel("Username: " + student.getUsername() , 18, "bold" ,80, 180);
+        Label admissionNumberLabel = Utility.createTextLabel("Admission Number: " + student.getAdmissionNumber() , 20, "normal" ,80, 110);
+        Label usernameLabel = Utility.createTextLabel("Username: " + student.getUsername() , 18, "normal" ,80, 180);
         PasswordField passwordField = Utility.createPasswordField("Password", 430, 170);
         passwordField.setPrefWidth(230);
         passwordField.setText(student.getPassword());
@@ -51,16 +51,16 @@ public class UpdateStudentPage2 {
         UIControlUtils.HBoxToComboBox(documentStatusField).setValue(student.getDocumentStatus());
 
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             updateStudentStage1.show();
             updateStudentStage2.close();
         });
 
-        Button updateBtn = Utility.createButton("Update", 120, 50, 360, 730);
-        updateBtn.setOnAction(event -> {
-            System.out.println("Update Button Clicked!");
+        Button saveBtn = Utility.createSaveButton();
+        saveBtn.setOnAction(event -> {
+            System.out.println("Save Button Clicked!");
             String classGrade = (String) UIControlUtils.HBoxToComboBox(classGradeField).getValue();
             String section = (String) UIControlUtils.HBoxToComboBox(sectionField).getValue();
             String password = passwordField.getText();
@@ -78,7 +78,7 @@ public class UpdateStudentPage2 {
         });
 
         rightPane.getChildren().addAll(heading1,admissionNumberLabel,classGradeField,sectionField,usernameLabel,passwordField, heading2,monthlyFeeField,scholarshipStatusField,documentStatusField, documentField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,100, 530), backBtn,updateBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,100, 530), backBtn,saveBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

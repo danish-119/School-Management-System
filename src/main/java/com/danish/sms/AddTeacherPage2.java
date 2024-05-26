@@ -50,14 +50,14 @@ public class AddTeacherPage2 {
 
 
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             addTeacherStage2.close();
             addTeacherStage1.show();
         });
 
-        Button saveBtn = Utility.createButton("Save", 100, 50, 360, 730);
+        Button saveBtn = Utility.createSaveButton();
         saveBtn.setOnAction(event -> {
             System.out.println("Save Button Clicked!");
             // Collect data entered on this page

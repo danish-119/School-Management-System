@@ -45,7 +45,7 @@ public class AddTeacherPage1 {
         List<String> subjectOptions = List.of("Major Subject", "Mathematics", "Science", "English","Urdu", "History", "Art", "Physical Education", "Computer Science", "Other");
         HBox subjectField = Utility.createSelect(subjectOptions, 230, 45, 430, 600);
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             addTeacherStage1.close();

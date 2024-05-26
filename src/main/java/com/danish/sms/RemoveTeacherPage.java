@@ -21,9 +21,9 @@ public class RemoveTeacherPage {
         Pane leftPane = Utility.createLeftPane();
         Pane rightPane = Utility.createRightPane();
 
-        TextField teacherIdField = Utility.createTextField("Enter Teacher ID", 50, 50);
+        TextField teacherIdField = Utility.createTextField("Enter Teacher ID", 80, 50);
 
-        Button searchBtn = Utility.createButton("Search", 100, 50, 370, 50);
+        Button searchBtn = Utility.createSearchButton(400, 50);
         searchBtn.setOnAction(event -> {
             System.out.println("Search Button Clicked!");
             rightPane.getChildren().clear();
@@ -47,7 +47,7 @@ public class RemoveTeacherPage {
             }
         });
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             teacherManagementStage.show();

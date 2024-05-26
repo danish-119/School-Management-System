@@ -2,6 +2,7 @@ package com.danish.sms;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -48,7 +49,11 @@ public class AdminMenu {
             FinancialAnalysisPage financialAnalysisPage = new FinancialAnalysisPage();
             financialAnalysisPage.showFinancialAnalysisPage(adminMenuStage);
         });
-        Button logoutBtn = Utility.createButton("Logout", 150, 50, 20, 730);
+        Button logoutBtn = Utility.createButton("", 100, 50, 20, 730);
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/logout.png",0,0);
+        imageView.setFitHeight(30);
+        imageView.setFitWidth(50);
+        logoutBtn.setGraphic(imageView);
         logoutBtn.setOnAction(event -> {
             System.out.println("Logout Button Clicked!");
             adminMenuStage.close();

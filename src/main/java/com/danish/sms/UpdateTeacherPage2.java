@@ -30,7 +30,7 @@ public class UpdateTeacherPage2 {
         List<String> jobTypeOptions = List.of("Job Type", "Full-Time", "Part-Time", "Contract", "Internship");
         HBox jobTypeField = Utility.createSelect(jobTypeOptions, 230, 50, 430, 100);
         UIControlUtils.HBoxToComboBox(jobTypeField).setValue(teacher.getJobType());
-        Label usernameLabel = Utility.createTextLabel("Username: " + teacher.getUsername() , 14, "bold" ,80, 180);
+        Label usernameLabel = Utility.createTextLabel("Username: " + teacher.getUsername() , 18, "normal" ,80, 180);
         PasswordField passwordField = Utility.createPasswordField("Password", 430, 170);
         passwordField.setPrefWidth(230);
         passwordField.setText(teacher.getPassword());
@@ -51,16 +51,16 @@ public class UpdateTeacherPage2 {
         UIControlUtils.HBoxToComboBox(documentStatusField).setValue(teacher.getDocumentStatus());
 
 
-        Button backBtn = Utility.createButton("Back", 100, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             updateTeacherStage1.show();
             updateTeacherStage2.close();
         });
 
-        Button updateBtn = Utility.createButton("Update", 120, 50, 360, 730);
-        updateBtn.setOnAction(event -> {
-            System.out.println("Update Button Clicked!");
+        Button saveBtn = Utility.createSaveButton();
+        saveBtn.setOnAction(event -> {
+            System.out.println("Save Button Clicked!");
             String jobTitle = (String) UIControlUtils.HBoxToComboBox(jobTitleField).getValue();
             String jobType = (String) UIControlUtils.HBoxToComboBox(jobTypeField).getValue();
             String password = passwordField.getText();
@@ -79,7 +79,7 @@ public class UpdateTeacherPage2 {
         });
 
         rightPane.getChildren().addAll(heading1, jobTitleField, jobTypeField,usernameLabel, passwordField, departmentField, heading2, monthlySalaryField, bankField, documentField, documentStatusField);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Teacher Info", 30, "bold" ,100, 530), backBtn,updateBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Teacher Info", 30, "bold" ,100, 530), backBtn, saveBtn, Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 

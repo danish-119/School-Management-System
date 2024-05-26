@@ -75,7 +75,7 @@ public class FinancialAnalysisPage {
 
 
         // Create buttons
-        Button backBtn = Utility.createButton("Back", 150, 50, 20, 730);
+        Button backBtn = Utility.createBackButton();
         backBtn.setOnAction(event -> {
             System.out.println("Back Button Clicked!");
             financialAnalysisStage.close();
