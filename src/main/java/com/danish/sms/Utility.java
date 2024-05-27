@@ -1,12 +1,15 @@
 package com.danish.sms;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import org.w3c.dom.Text;
 
 import java.io.*;
 import java.security.SecureRandom;
@@ -60,7 +63,7 @@ public class Utility {
     // Method to create a button
     public static Button createButton(String text, int width, int height, int layoutX, int layoutY) {
         Button continueBtn = new Button(text);
-        continueBtn.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 20px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 10px; -fx-border-color: #388E3C; -fx-cursor: hand;");
+        continueBtn.setStyle("-fx-font-family: 'Roboto'; -fx-font-size: 20px; -fx-background-color: #5bd362; -fx-border-radius: 8px; -fx-background-radius: 10px; -fx-border-color: #388E3C; -fx-cursor: hand;");
         continueBtn.setPrefSize(width, height);
         continueBtn.setLayoutX(layoutX);
         continueBtn.setLayoutY(layoutY);
@@ -78,7 +81,16 @@ public class Utility {
 
     public static Button createBackButton(){
         Button backBtn = Utility.createButton("", 100, 50, 20,730);
-        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/back.png",0,0);
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/left.png",0,0);
+        imageView.setFitHeight(30);
+        imageView.setFitWidth(50);
+        backBtn.setGraphic(imageView);
+        return backBtn;
+    }
+
+    public static Button createNextButton(){
+        Button backBtn = Utility.createButton("", 100, 50, 370,730);
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/right.png",0,0);
         imageView.setFitHeight(30);
         imageView.setFitWidth(50);
         backBtn.setGraphic(imageView);
@@ -92,6 +104,28 @@ public class Utility {
         imageView.setFitWidth(50);
         saveBtn.setGraphic(imageView);
         return saveBtn;
+    }
+
+
+    public static Button createMenuButton(String text, String imagePath, int layoutY) {
+        Button menuBtn = Utility.createButton("", 300, 50, 200, layoutY);
+
+        ImageView imageView = Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources" + imagePath, 0, 0);
+        imageView.setFitHeight(30);
+        imageView.setFitWidth(50);
+
+        HBox hbox = new HBox();
+        hbox.setAlignment(Pos.CENTER_LEFT);
+        hbox.setSpacing(10);
+        hbox.getChildren().add(imageView);
+
+        Label textLabel = new Label(text);
+        StackPane stackPane = new StackPane();
+        stackPane.getChildren().addAll(hbox, textLabel);
+        StackPane.setAlignment(textLabel, Pos.CENTER);
+
+        menuBtn.setGraphic(stackPane);
+        return menuBtn;
     }
 
     // Method to create a text field

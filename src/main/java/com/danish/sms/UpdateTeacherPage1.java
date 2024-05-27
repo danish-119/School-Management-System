@@ -77,7 +77,7 @@ public class UpdateTeacherPage1 {
             updateTeacherStage1.close();
         });
 
-        Button nextBtn = Utility.createButton("Next", 120, 50, 360, 730);
+        Button nextBtn = Utility.createNextButton();
         nextBtn.setOnAction(event -> {
             System.out.println("Next Button Clicked!");
             // Collect data entered by the user

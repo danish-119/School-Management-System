@@ -92,8 +92,8 @@ public class UpdateStudentPage1 {
             updateStudentStage1.close();
         });
 
-        Button updateBtn = Utility.createButton("Next", 120, 50, 360, 730);
-        updateBtn.setOnAction(event -> {
+        Button nextBtn = Utility.createNextButton();
+        nextBtn.setOnAction(event -> {
             System.out.println("Next Button Clicked!");
             // Collect data entered by the user
             String email = emailField.getText().toLowerCase();
@@ -114,7 +114,7 @@ public class UpdateStudentPage1 {
         });
 
         rightPane.getChildren().addAll(studentIdField,searchBtn);
-        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,80, 530), backBtn,updateBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
+        leftPane.getChildren().addAll(Utility.createTextLabel("Update Student Info", 30, "bold" ,80, 530), backBtn,nextBtn,Utility.displayImage("/media/danish/8E20E81220E7FF59/Programming/Code/Java Code/IntelliJ IDEA/Projects/School Management System/src/main/resources/updatePerson.png", 120,220));
         contentLayout.getChildren().addAll(leftPane, rightPane);
         mainLayout.getChildren().add(contentLayout);
 
