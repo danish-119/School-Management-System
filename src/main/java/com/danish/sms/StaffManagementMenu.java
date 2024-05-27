@@ -20,21 +20,21 @@ public class StaffManagementMenu {
         HBox contentLayout = Utility.createContentLayout();
 
         // Create buttons
-        Button addStaffBtn = Utility.createButton("Add Staff", 300, 50, 200, 240);
+        Button addStaffBtn  = Utility.createMenuButton("Add Staff","/addBtn.png",240);
         addStaffBtn.setOnAction(event -> {
             System.out.println("Add Staff Button Clicked!");
             staffManagementStage.close();
             AddStaffPage addStaffPage = new AddStaffPage();
             addStaffPage.showAddStaffPage(staffManagementStage);
         });
-        Button removeStaffBtn = Utility.createButton("Remove Staff", 300, 50, 200, 310);
+        Button removeStaffBtn  = Utility.createMenuButton("Remove Staff","/removeBtn.png",310);
         removeStaffBtn.setOnAction(event ->{
             System.out.println("Remove Staff Button Clicked!");
             staffManagementStage.close();
             RemoveStaffPage removeStaffPage = new RemoveStaffPage();
             removeStaffPage.showRemoveStaffPage(staffManagementStage);
         });
-        Button displayAllStaffBtn = Utility.createButton("Display All Staff", 300, 50, 200, 380);
+        Button displayAllStaffBtn = Utility.createMenuButton("Display All Staff","/allPeople.png",380);
         displayAllStaffBtn.setOnAction(event ->{
             System.out.println("Display All Staff Button Clicked!");
             staffManagementStage.close();

@@ -20,28 +20,31 @@ public class StudentManagementMenu {
         HBox contentLayout = Utility.createContentLayout();
 
         // Create buttons
-        Button addStudentBtn = Utility.createButton("Add Student", 300, 20, 200, 240);
+        Button addStudentBtn = Utility.createMenuButton("Add Student","/addBtn.png",240);
         addStudentBtn.setOnAction(event -> {
             System.out.println("Add Student Button Clicked!");
             studentManagementStage.close();
             AddStudentPage1 addStudentPage1 = new AddStudentPage1();
             addStudentPage1.showAddStudentPage(studentManagementStage);
         });
-        Button updateStudentBtn = Utility.createButton("Update Student", 300, 20, 200, 310);
+
+        Button updateStudentBtn = Utility.createMenuButton("Update Student","/updateBtn.png",310);
         updateStudentBtn.setOnAction(event ->{
             System.out.println("Update Student Button Clicked!");
             studentManagementStage.close();
             UpdateStudentPage1 updateStudentPage = new UpdateStudentPage1();
             updateStudentPage.showUpdateStudentPage1(studentManagementStage);
         });
-        Button removeStudentBtn = Utility.createButton("Remove Student", 300, 50, 200, 380);
+
+        Button removeStudentBtn = Utility.createMenuButton("Remove Student","/removeBtn.png",380);
         removeStudentBtn.setOnAction(event -> {
             System.out.println("Remove Student Button Clicked!");
             studentManagementStage.close();
             RemoveStudentPage removeStudentPage = new RemoveStudentPage();
             removeStudentPage.showRemoveStudentPage(studentManagementStage);
         });
-        Button displayAllStudentBtn = Utility.createButton("Display All Students", 300, 50, 200, 450);
+
+        Button displayAllStudentBtn = Utility.createMenuButton("Display All Students", "/allPeople.png",  450);
         displayAllStudentBtn.setOnAction(event -> {
             System.out.println("Display All Student Button Clicked!");
             studentManagementStage.close();

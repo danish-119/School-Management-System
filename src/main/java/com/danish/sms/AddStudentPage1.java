@@ -55,7 +55,7 @@ public class AddStudentPage1 {
             studentManagementMenu.show();
         });
 
-        Button nextBtn = Utility.createButton("Next", 100, 50, 360, 730);
+        Button nextBtn = Utility.createNextButton();
         nextBtn.setOnAction(event -> {
             System.out.println("Next Button Clicked!");
 
