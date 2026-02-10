@@ -1,41 +1,80 @@
 # School Management System
 
-## Description
+## Overview
+This project is a JavaFX-based School Management System built as part of the Object Oriented Programming course (CSC-241) at COMSATS University Islamabad, Lahore Campus. It provides a desktop interface for administrators to manage students, teachers, staff, and financial summaries using a MySQL database backend.
 
-This project is an intuitive School Management System developed using JavaFX, as a part of the Object Oriented Programming course (CSC-241) at Comsats University Islamabad-Lahore Campus. The system aims to streamline administrative tasks, enhance efficiency, and provide insightful data management for educational institutions.
+## Objectives
+- Centralize academic and administrative records.
+- Provide fast, reliable CRUD operations for people records.
+- Offer a clear, menu-driven JavaFX UI for non-technical users.
+- Enable basic financial reporting (salary and fee analysis).
 
-## Project Overview
-
-The primary objective of this project is to design and implement a user-friendly School Management System that caters to the needs of administrators, facilitating tasks related to student, faculty, and staff management.
+## Tech Stack
+- **Language:** Java
+- **UI:** JavaFX
+- **Build:** Maven
+- **Database:** MySQL
 
 ## Key Features
+- **Admin authentication** to access management modules.
+- **Student management** (add, update, remove, view all).
+- **Teacher management** (add, update, remove, view all).
+- **Staff management** (add, update, remove, view all).
+- **Financial analysis** for fee and salary summaries.
+- **MySQL persistence** for reliable data storage.
 
-1. **Admin Login and Management**: Secure login functionality for administrators, ensuring access control to sensitive data and management functionalities.
+## Project Structure
+- [src/main/java/com/danish/sms](src/main/java/com/danish/sms)
+  - `Main` entry point and JavaFX bootstrap
+  - UI pages (e.g., `LoginPage`, `AdminMenu`, `StudentManagementMenu`, `TeacherManagementMenu`, `StaffManagementMenu`)
+  - Data models: `Person`, `Student`, `Teacher`, `Staff`
+  - Database utilities: `LoadDataFromMySQL`, `SaveDataToMySQL`, `UpdateDataInMySQL`, `RemoveDataFromMySQL`, `GetDataByIdFromMySQL`
+- [src/main/resources](src/main/resources) for app resources
 
-2. **Student Management**: Efficient management of student records, including admission details, personal information, and guardian’s information.
+## Prerequisites
+- **JDK 17+** installed and configured.
+- **Maven** (or use the provided wrapper: `mvnw` / `mvnw.cmd`).
+- **MySQL Server** running locally or remotely.
+- JavaFX dependencies handled through Maven.
 
-3. **Faculty Management**: Tools for managing faculty information, such as hiring details, course assignments, and salary tracking.
+## Database Setup
+1. Create a MySQL database (e.g., `school_management`).
+2. Create the required tables for students, teachers, and staff.
+3. Update the DB connection configuration in the database utility classes under [src/main/java/com/danish/sms](src/main/java/com/danish/sms).
 
-4. **Staff Management**: Features for managing non-teaching staff, including recruitment, payroll management, and task assignments.
+> If you already have a schema, update the table names and columns in the SQL queries inside the `*MySQL` utility classes to match your schema.
 
-5. **Financial Analysis**: Modules to calculate and analyze financial aspects, such as total salary expenses for faculty and staff, and revenue generated from student fees.
+## Build and Run
+### Using Maven Wrapper (Windows)
+1. Open a terminal at the project root.
+2. Run:
+	- `mvnw.cmd clean install`
+	- `mvnw.cmd javafx:run`
 
-6. **Data Management**: Utilization of MySQL database management system for efficient storage, retrieval, and manipulation of information.
+### Using Maven (macOS/Linux)
+1. Open a terminal at the project root.
+2. Run:
+	- `./mvnw clean install`
+	- `./mvnw javafx:run`
+
+## How to Use
+1. Launch the application.
+2. Log in as an admin.
+3. Use the management menus to add, update, remove, or view records.
+4. Navigate to the Financial Analysis page for summary calculations.
+
+## Known Limitations
+- Admin-only access (no separate student/teacher portals yet).
+- Basic reporting (advanced analytics not implemented).
 
 ## Future Enhancements
-
-Future enhancements may include:
-
-- Implementation of secure login systems for teachers and students.
-- Personalized portals for teachers and students to access class schedules, grade management, and academic progress tracking.
-
-## Conclusion
-
-The School Management System project aims to deliver a robust, scalable, and user-friendly solution to address the administrative needs of educational institutions. The development process has already begun, with key features such as adding students and teachers successfully implemented.
+- Dedicated portals for students and teachers.
+- Role-based access control with stronger authentication.
+- Exportable reports (PDF/CSV).
+- Attendance and grading modules.
 
 ## Contributors
 - **Muhammad Danish** (FA23-BSE-105)
 
 ## Instructor
-
 - **Mr. Muhammad Shahid Bhatti**
